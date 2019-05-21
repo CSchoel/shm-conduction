@@ -1,5 +1,5 @@
 within SHMContraction.Components;
-model Contraction2 "contraction model for the heart (simplified version)"
+model Contraction "contraction model for the heart (simplified version)"
   parameter String outfile = "heartbeats.csv" "output file name where RR-Intervals are saved";
   parameter Real T_refrac = 0.22 "refractory period that has to pass until a signal from the sinus node can take effect again";
   parameter Real T_av = 1.7 "av-node cycle duration";
@@ -62,4 +62,4 @@ equation
   not capable of handling discrete equation systems. Therefore it was necessary to introduce the continuous phases <b>av_phase</b>,
   <b>sinus_phase</b> and <b>refrac_countdown</b>, as well as the continuous variable condition <b>signal_received_cont</b>.</i></p>
 </html>"));
-end Contraction2;
+end Contraction;
