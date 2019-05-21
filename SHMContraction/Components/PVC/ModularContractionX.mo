@@ -2,7 +2,7 @@ within SHMContraction.Components.PVC;
 model ModularContractionX
   extends UnidirectionalContractionComponent;
   RefractoryGateX refrac(T_refrac=0.364);
-  ConstantPacemaker pace(T=1.7);
+  Pacemaker pace(T=1.7);
   AVConductionDelayX cdelay;
   RefractoryGate vref(T_refrac=0.2);
   input Boolean pvc;
