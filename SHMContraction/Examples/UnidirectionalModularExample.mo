@@ -1,14 +1,11 @@
 within SHMContraction.Examples;
 model UnidirectionalModularExample
-  SHM.SchoelzelThesis.Components.Contraction.Unidirectional.ModularContractionSHM mco;
   SHMContraction.Components.ModularContraction mc(T_refrac=0.364);
   SHMContraction.Components.Contraction2 c2;
   Real count_mc(start=0, fixed=true);
   Real count_c2(start=0, fixed=true);
-  Real count_mco(start=0, fixed=true);
 equation
   mc.inp = c2.signal;
-  mco.inp = c2.signal;
   if time < 5 then
     c2.signal = sample(0,1);
   elseif time < 15 then
@@ -29,9 +26,6 @@ equation
   end when;
   when mc.outp then
     count_mc = pre(count_mc) + 1;
-  end when;
-  when mco.outp then
-    count_mco = pre(count_mco) + 1;
   end when;
   annotation(
     experiment(StartTime = 0, StopTime = 50, Tolerance = 1e-6, Interval = 0.002),
