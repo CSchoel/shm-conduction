@@ -1,6 +1,6 @@
 within SHMContraction;
-package Components
+package Examples
 annotation(Documentation(info="<html>
-  <p>Contains component models used in the examples.</p>
+  <p>Contains complete example models that can be simulated.</p>
 </html>"));
 end Examples;

@@ -1,7 +1,7 @@
-within SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified;
+within SHMContraction.Components;
 package ExtraSystole
 annotation(Documentation(info="<html>
-  <p>Contains simplified versions of the unidirectional contraction components
-  used in the paper: TODO.</p>
+  <p>Contains modified and additional models for simulating premature
+  ventricular contractions (PVCs).</p>
 </html>"));
 end ExtraSystole;
