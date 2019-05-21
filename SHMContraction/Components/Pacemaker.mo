@@ -1,11 +1,13 @@
 within SHMContraction.Components;
 partial model Pacemaker
   extends UnidirectionalContractionComponent;
-  Real phase(start=0, fixed=true);
+  parameter Real T = 1 "pacemaker period";
   input Boolean reset;
+protected
+  Real t_next(start=T, fixed=true);
 equation
-  outp = inp or phase >= 1;
-  when phase >= 1 or reset then
-    reinit(phase, 0);
+  outp = inp or time > pre(t_next);
+  when outp or reset then
+    t_next = time + T;
   end when;
 end Pacemaker;

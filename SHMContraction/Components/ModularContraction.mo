@@ -2,7 +2,7 @@ within SHMContraction.Components;
 model ModularContraction
   extends UnidirectionalContractionComponent;
   RefractoryGate refrac;
-  ConstantPacemaker pace;
+  Pacemaker pace;
   AVConductionDelay cdelay;
 equation
   connect(inp, pace.inp);
