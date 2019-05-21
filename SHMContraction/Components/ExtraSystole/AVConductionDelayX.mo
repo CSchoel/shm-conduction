@@ -1,4 +1,4 @@
-within SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified.ExtraSystole;
+within SHMContraction.Components.ExtraSystole;
 model AVConductionDelayX
   extends ConductionDelayX;
   parameter Real k_avc_t = 0.78;

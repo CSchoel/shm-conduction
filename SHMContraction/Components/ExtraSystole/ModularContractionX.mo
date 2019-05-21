@@ -1,4 +1,4 @@
-within SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified.ExtraSystole;
+within SHMContraction.Components.ExtraSystole;
 model ModularContractionX
   extends UnidirectionalContractionComponent;
   RefractoryGateX refrac(T_refrac=0.364);

@@ -1,4 +1,4 @@
-within SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified;
+within SHMContraction.Components;
 model AVConductionDelay
   extends ConductionDelay;
   parameter Real k_avc_t = 0.78;

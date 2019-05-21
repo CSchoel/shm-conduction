@@ -1,4 +1,4 @@
-within SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified;
+within SHMContraction.Components;
 model ConstantPacemaker
   extends Pacemaker;
   parameter Real T = 1 "pacemaker period";

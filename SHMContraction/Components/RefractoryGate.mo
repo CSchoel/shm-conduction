@@ -1,4 +1,4 @@
-within SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified;
+within SHMContraction.Components;
 model RefractoryGate
   extends UnidirectionalContractionComponent;
   parameter Real t_first = 0 "time of first signal";

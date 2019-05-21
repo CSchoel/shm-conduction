@@ -1,4 +1,4 @@
-within SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified.ExtraSystole;
+within SHMContraction.Components.ExtraSystole;
 partial model ConductionDelayX
   extends UnidirectionalContractionComponent;
   Real duration;

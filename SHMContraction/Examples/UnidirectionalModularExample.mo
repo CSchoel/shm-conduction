@@ -1,8 +1,8 @@
-within SHM.SchoelzelThesis.Examples;
+within SHMContraction.Examples;
 model UnidirectionalModularExample
-  SHM.SchoelzelThesis.Components.Contraction.Unidirectional.ModularContraction mc(T_refrac=0.364);
   SHM.SchoelzelThesis.Components.Contraction.Unidirectional.ModularContractionSHM mco;
-  SHM.SeidelThesis.Components.Contraction2 c2;
+  SHMContraction.Components.ModularContraction mc(T_refrac=0.364);
+  SHMContraction.Components.Contraction2 c2;
   Real count_mc(start=0, fixed=true);
   Real count_c2(start=0, fixed=true);
   Real count_mco(start=0, fixed=true);

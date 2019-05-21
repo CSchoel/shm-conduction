@@ -1,4 +1,4 @@
-within SHM.SeidelThesis.Components;
+within SHMContraction.Components;
 model Contraction2 "contraction model for the heart (simplified version)"
   parameter String outfile = "heartbeats.csv" "output file name where RR-Intervals are saved";
   parameter Real T_refrac = 0.22 "refractory period that has to pass until a signal from the sinus node can take effect again";

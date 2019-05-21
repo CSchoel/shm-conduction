@@ -1,4 +1,4 @@
-within SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified;
+within SHMContraction.Components;
 model ModularContraction
   extends UnidirectionalContractionComponent;
   RefractoryGate refrac;

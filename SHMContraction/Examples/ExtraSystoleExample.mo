@@ -1,6 +1,6 @@
-within SHM.SchoelzelThesis.Examples;
+within SHMContraction.Examples;
 model ExtraSystoleExample
-  SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified.ExtraSystole.ModularContractionX con;
+  SHMContraction.Components.ExtraSystole.ModularContractionX con;
   Real T(start=1, fixed=true);
   Real t_last_cont(start=0, fixed=true);
   Real t_last_sig(start=0, fixed=true);

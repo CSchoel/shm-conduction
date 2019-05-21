@@ -1,4 +1,4 @@
-within SHM.SchoelzelThesis.Components.Contraction.Unidirectional.Simplified;
+within SHMContraction.Components;
 partial model Pacemaker
   extends UnidirectionalContractionComponent;
   Real phase(start=0, fixed=true);
