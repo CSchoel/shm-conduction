@@ -1,6 +1,6 @@
 within SHMContraction.Examples;
 model UnidirectionalModularExample
-  SHMContraction.Components.ModularContraction mc(refrac.T_refrac=0.364);
+  SHMContraction.Components.ModularContraction mc;
   SHMContraction.Components.Contraction c;
   Real count_mc(start=0, fixed=true);
   Real count_c(start=0, fixed=true);

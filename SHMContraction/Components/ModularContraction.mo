@@ -1,8 +1,8 @@
 within SHMContraction.Components;
 model ModularContraction
   extends UnidirectionalContractionComponent;
-  RefractoryGate refrac;
-  Pacemaker pace;
+  RefractoryGate refrac(T_refrac=0.364);
+  Pacemaker pace(T=1.7);
   AVConductionDelay cdelay;
   discrete Real T(start=initial_T, fixed=true) "duration of last heart cycle";
   discrete Real cont_last(start=initial_cont_last, fixed=true) "time of last contraction";
