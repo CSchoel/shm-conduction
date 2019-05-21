@@ -1,5 +1,5 @@
 within SHMContraction.Components;
-partial model Pacemaker
+model Pacemaker
   extends UnidirectionalContractionComponent;
   parameter Real T = 1 "pacemaker period";
   input Boolean reset;
