@@ -1,4 +1,4 @@
-within SHMContraction.Components.ExtraSystole;
+within SHMContraction.Components.PVC;
 model AVConductionDelayX
   extends ConductionDelayX;
   parameter Real k_avc_t = 0.78;

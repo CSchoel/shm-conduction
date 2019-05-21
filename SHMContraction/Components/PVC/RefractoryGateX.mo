@@ -1,4 +1,4 @@
-within SHMContraction.Components.ExtraSystole;
+within SHMContraction.Components.PVC;
 model RefractoryGateX
   extends UnidirectionalContractionComponent;
   parameter Real t_first = 0 "time of first signal";

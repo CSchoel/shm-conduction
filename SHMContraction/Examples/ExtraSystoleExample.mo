@@ -1,6 +1,6 @@
 within SHMContraction.Examples;
 model ExtraSystoleExample
-  SHMContraction.Components.ExtraSystole.ModularContractionX con;
+  SHMContraction.Components.PVC.ModularContractionX con;
   Real T(start=1, fixed=true);
   Real t_last_cont(start=0, fixed=true);
   Real t_last_sig(start=0, fixed=true);

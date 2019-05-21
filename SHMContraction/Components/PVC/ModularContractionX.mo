@@ -1,4 +1,4 @@
-within SHMContraction.Components.ExtraSystole;
+within SHMContraction.Components.PVC;
 model ModularContractionX
   extends UnidirectionalContractionComponent;
   RefractoryGateX refrac(T_refrac=0.364);

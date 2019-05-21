@@ -1,4 +1,4 @@
-within SHMContraction.Components.ExtraSystole;
+within SHMContraction.Components.PVC;
 partial model ConductionDelayX
   extends UnidirectionalContractionComponent;
   Real duration;
