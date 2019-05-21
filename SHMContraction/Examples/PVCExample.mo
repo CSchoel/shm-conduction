@@ -1,5 +1,5 @@
 within SHMContraction.Examples;
-model ExtraSystoleExample
+model PVCExample
   SHMContraction.Components.PVC.ModularContractionX con;
   Real T(start=1, fixed=true);
   Real t_last_cont(start=0, fixed=true);
@@ -38,4 +38,4 @@ equation
     experiment(StartTime = 0, StopTime = 55, Tolerance = 1e-6, Interval = 0.002),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "dassl")
   );
-end ExtraSystoleExample;
+end PVCExample;
