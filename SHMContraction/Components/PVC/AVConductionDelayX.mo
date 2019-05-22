@@ -1,10 +1,10 @@
 within SHMContraction.Components.PVC;
 model AVConductionDelayX
   extends ConductionDelayX;
-  parameter Real k_avc_t = 0.78 "maximum increase in delay duration";
-  parameter Real T_avc0 = 0.09 "minimal delay duration";
-  parameter Real tau_avc = 0.11 "reference time for delay duration";
-  parameter Real initial_T_avc = 0.15 "initial value for delay duration";
+  parameter Modelica.SIunits.Duration k_avc_t = 0.78 "maximum increase in delay duration";
+  parameter Modelica.SIunits.Duration T_avc0 = 0.09 "minimal delay duration";
+  parameter Modelica.SIunits.Duration tau_avc = 0.11 "reference time for delay duration";
+  parameter Modelica.SIunits.Duration initial_T_avc = 0.15 "initial value for delay duration";
 initial equation
   duration = initial_T_avc;
 equation
