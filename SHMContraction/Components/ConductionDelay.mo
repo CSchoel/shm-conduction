@@ -8,10 +8,9 @@ partial model ConductionDelay
   Boolean delay_passed = time > t_next;
 equation
   outp = edge(delay_passed);
-  when inp then
+  when inp and pre(delay_passed) then
     T = time - pre(t_last);
     t_next = time + duration;
-    assert(time > pre(t_next), "still on hold!");
   end when;
   when outp then
     t_last = time;
