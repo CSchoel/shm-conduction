@@ -1,9 +1,7 @@
 within SHMContraction.Examples;
 model UnidirectionalModularExample
-  SHMContraction.Components.ModularContraction mc;
-  SHMContraction.Components.Contraction c;
-  Real count_mc(start=0, fixed=true);
-  Real count_c(start=0, fixed=true);
+  SHMContraction.Components.ModularContraction mc "modular contraction model";
+  SHMContraction.Components.Contraction c "original monolithic contraction model";
 equation
   mc.inp = c.signal;
   if time < 5 then
@@ -21,12 +19,6 @@ equation
   else
     c.signal = sample(0,1.8);
   end if;
-  when c.contraction then
-    count_c = pre(count_c) + 1;
-  end when;
-  when mc.outp then
-    count_mc = pre(count_mc) + 1;
-  end when;
   annotation(
     experiment(StartTime = 0, StopTime = 50, Tolerance = 1e-6, Interval = 0.002),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "dassl")

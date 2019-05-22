@@ -1,12 +1,12 @@
 within SHMContraction.Components.PVC;
 partial model ConductionDelayX
   extends UnidirectionalContractionComponent;
-  Real duration;
-  Real T(start=0, fixed=true);
-  Real t_last(start=0, fixed=true);
-  Real t_next(start=-1, fixed=true);
-  Boolean delay_passed = time > t_next;
-  input Boolean reset;
+  Real duration "delay duration";
+  Real T(start=0, fixed=true) "time between last output and following signal";
+  Real t_last(start=0, fixed=true) "time of last output";
+  Real t_next(start=-1, fixed=true) "time where next output is scheduled";
+  Boolean delay_passed = time > t_next "if false, there is still a signal currently put on hold";
+  input Boolean reset "reset signal that cancels a signal that is currently on hold";
 equation
   outp = edge(delay_passed);
   when reset or (inp and pre(delay_passed)) then
