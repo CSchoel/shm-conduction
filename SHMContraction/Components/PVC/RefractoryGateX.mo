@@ -3,11 +3,12 @@ model RefractoryGateX
   extends UnidirectionalContractionComponent;
   parameter Real t_first = 0 "time of first signal";
   parameter Real T_refrac = 1 "refractory period";
+  Boolean refrac_passed = time - pre(t_last) > T_refrac;
   input Boolean reset;
 protected
   Real t_last(start=t_first) "time of last output";
 equation
-  outp = inp and time - pre(t_last) > T_refrac;
+  outp = inp and refrac_passed;
   when outp or reset then
     t_last = time;
   end when;
