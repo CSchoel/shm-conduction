@@ -4,10 +4,8 @@ model ModularContraction
   RefractoryGate refrac(T_refrac=0.364);
   Pacemaker pace(T=1.7);
   AVConductionDelay cdelay;
-  discrete Real T(start=initial_T, fixed=true) "duration of last heart cycle";
-  discrete Real cont_last(start=initial_cont_last, fixed=true) "time of last contraction";
-  parameter Real initial_T = 1 "initial value for duration of last heart cycle";
-  parameter Real initial_cont_last = 0 "initial value for time of last contraction";
+  discrete Real T(start=1, fixed=true) "duration of last heart cycle";
+  discrete Real cont_last(start=0, fixed=true) "time of last contraction";
 equation
   connect(inp, pace.inp);
   connect(pace.outp, refrac.inp);
