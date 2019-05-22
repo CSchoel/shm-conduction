@@ -1,5 +1,5 @@
 within SHMContraction.Components;
 partial model UnidirectionalContractionComponent
-  input Boolean inp "input connector";
-  output Boolean outp "output connector";
+  input InstantSignal inp "input connector";
+  output InstantSignal outp "output connector";
 end UnidirectionalContractionComponent;
