@@ -1,14 +1,11 @@
 within SHMContraction.Examples;
 model PVCExample
   SHMContraction.Components.PVC.ModularContractionX con;
-  Real T(start=1, fixed=true);
-  Real t_last_cont(start=0, fixed=true);
-  Real t_last_sig(start=0, fixed=true);
+  Real sig_last(start=0, fixed=true);
   Integer count_sig(start=0, fixed=true);
   parameter Boolean with_sinus = true;
   parameter Real T_normal = if with_sinus then 0.8 else con.pace.T "75 bpm";
-  Real t_since_sig = time - pre(t_last_sig) "time since last signal from AV/SA node";
-  Real t_since_cont = time - pre(t_last_cont) "time since last contraction";
+  Real t_since_sig = time - pre(sig_last) "time since last signal from AV/SA node";
   Boolean pvc_a = pre(count_sig) == 5 and t_since_sig > con.cdelay.T_avc0 / 2
     "timer for PVC a): while 6th beat is delayed";
   Boolean pvc_b = pre(count_sig) == 12 and t_since_sig > con.refrac.T_refrac / 2
@@ -28,11 +25,7 @@ equation
   end if;
   when con.refrac.outp then
     count_sig = pre(count_sig) + 1;
-    t_last_sig = time;
-  end when;
-  when con.outp then
-    t_last_cont = time;
-    T = t_since_cont;
+    sig_last = time;
   end when;
   annotation(
     experiment(StartTime = 0, StopTime = 55, Tolerance = 1e-6, Interval = 0.002),
