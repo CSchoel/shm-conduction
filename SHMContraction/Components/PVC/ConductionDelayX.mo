@@ -6,7 +6,7 @@ partial model ConductionDelayX
   Modelica.SIunits.Time t_last(start=0, fixed=true) "time of last output";
   Modelica.SIunits.Time t_next(start=-1, fixed=true) "time where next output is scheduled";
   Boolean delay_passed = time > t_next or t_next > 1e99 "if false, there is still a signal currently put on hold";
-  input Boolean reset "reset signal that cancels a signal that is currently on hold";
+  input InstantSignal reset "reset signal that cancels a signal that is currently on hold";
 equation
   outp = edge(delay_passed);
   when reset or (inp and pre(delay_passed)) then

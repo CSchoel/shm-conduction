@@ -7,8 +7,8 @@ model ModularContractionX
   RefractoryGate vref(T_refrac=0.2) "refractory component for ventricles";
   discrete Modelica.SIunits.Period T(start=1, fixed=true) "duration of last heart cycle";
   discrete Modelica.SIunits.Time cont_last(start=0, fixed=true) "time of last contraction";
-  input Boolean pvc "trigger signal for a PVC";
-  Boolean pvc_upward = pre(pvc) and pre(outp) "true if we have PVC that travels upward";
+  input InstantSignal pvc "trigger signal for a PVC";
+  InstantSignal pvc_upward = pre(pvc) and pre(outp) "true if we have PVC that travels upward";
 equation
   connect(inp, pace.inp);
   connect(pace.outp, refrac.inp);
