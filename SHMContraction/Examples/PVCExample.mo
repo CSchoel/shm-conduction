@@ -15,7 +15,7 @@ model PVCExample
   Boolean pvc_d = pre(count_sig) == 26 and
     t_since_sig > T_normal - con.cdelay.T_avc0 / 2
     "timer for PVC d): just before the 27th beat was signalled";
-  Boolean trigger = pvc_a or pvc_b or pvc_c or pvc_d "pvc trigger signal";
+  Boolean trigger(fixed=true) = pvc_a or pvc_b or pvc_c or pvc_d "pvc trigger signal";
 equation
   con.pvc = edge(trigger);
   if with_sinus then

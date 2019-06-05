@@ -6,7 +6,7 @@ model RefractoryGateX
   Boolean refrac_passed = time - pre(t_last) > T_refrac "true if component is ready to receive a signal";
   input InstantSignal reset "signal that resets internal clock";
 protected
-  Modelica.SIunits.Time t_last(start=t_first) "time of last output";
+  Modelica.SIunits.Time t_last(start=t_first, fixed=true) "time of last output";
 equation
   outp = inp and refrac_passed;
   when outp or reset then
