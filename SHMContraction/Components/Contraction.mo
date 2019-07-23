@@ -1,5 +1,6 @@
 within SHMContraction.Components;
 model Contraction "contraction model for the heart (simplified version)"
+  //TODO: find variables that need fixed start values
   parameter String outfile = "heartbeats.csv" "output file name where RR-Intervals are saved";
   parameter Modelica.SIunits.Duration T_refrac = 0.22 "refractory period that has to pass until a signal from the sinus node can take effect again";
   parameter Modelica.SIunits.Period T_av = 1.7 "av-node cycle duration";
