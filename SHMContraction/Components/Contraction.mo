@@ -1,7 +1,5 @@
 within SHMContraction.Components;
-model Contraction "contraction model for the heart (simplified version)"
-  //TODO: find variables that need fixed start values
-  parameter String outfile = "heartbeats.csv" "output file name where RR-Intervals are saved";
+model Contraction "cardiac conduction system of the human heart adapted from the doctorate thesis of H. Seidel"
   parameter Modelica.SIunits.Duration T_refrac = 0.22 "refractory period that has to pass until a signal from the sinus node can take effect again";
   parameter Modelica.SIunits.Period T_av = 1.7 "av-node cycle duration";
   parameter Modelica.SIunits.Duration k_avc_t = 0.78 "sensitivity of the atrioventricular conduction time to the time passed since the last ventricular conduction";
@@ -13,38 +11,37 @@ model Contraction "contraction model for the heart (simplified version)"
   parameter Modelica.SIunits.Duration initial_T_avc = 0.15 "initial value for atrioventricular conduction time";
   discrete Modelica.SIunits.Time cont_last "time of last contraction";
   discrete Modelica.SIunits.Duration T_avc "atrioventricular conduction time (delay for sinus signal to trigger contraction)";
-  input Boolean signal "the sinus signal";
-  output Boolean contraction "true when a contraction is triggered";
+  input InstantSignal signal(start=false, fixed=true) "the sinus signal";
+  output InstantSignal contraction(start=false, fixed=true) "true when a contraction is triggered";
   output Boolean av_contraction "true when the av-node triggers a contraction";
   output Boolean sinus_contraction "true when the sinus node triggers a contraction";
-  output Boolean refrac_passed "true when the refractory period has passed";
+  output Boolean refrac_passed(start=false, fixed=true) "true when the refractory period has passed";
   discrete output Modelica.SIunits.Period T "time between the last two sinus signals that did trigger a contraction";
   discrete output Modelica.SIunits.Period T_cont "time between the last two contractions";
   Modelica.SIunits.Duration T_passed "helper variable; time passed since last contraction";
-  Boolean signal_received "true, if a sinus signal has already been received since the last contraction";
-  discrete Modelica.SIunits.Time sig_last "time of last received sinus signal";
+  Boolean signal_received(start=false, fixed=true) "true, if a sinus signal has already been received since the last contraction";
+  discrete Modelica.SIunits.Time sinus_last "time of last received sinus signal";
 protected
-  Boolean contraction_event;
+  Boolean contraction_event(start=false, fixed=true);
 initial equation
   cont_last = initial_cont_last;
-  sig_last = 0;
+  sinus_last = 0;
   T = initial_T;
   T_cont = initial_T_cont;
   T_avc = initial_T_avc;
 equation
-  signal_received = sig_last > cont_last;
+  signal_received = sinus_last > cont_last;
   refrac_passed = T_passed > T_refrac;
   contraction_event = (av_contraction or sinus_contraction) and refrac_passed "contraction can come from av-node or sinus node";
   contraction = edge(contraction_event);
   av_contraction = T_passed > T_av "av-node contracts when T_av has passed since last contraction";
-  sinus_contraction = signal_received and time > sig_last + T_avc "sinus node contracts when T_avc has passed since last sinus signal";
+  sinus_contraction = signal_received and time > sinus_last + T_avc "sinus node contracts when T_avc has passed since last sinus signal";
   T_passed = time - cont_last;
   //sinus signal is recognized if refractory period has passed and there is no other sinus signal already in effect
   when signal and pre(refrac_passed) and not pre(signal_received) then
-    T_avc = T_avc0 + k_avc_t * exp(-T_passed / tau_avc) "'enables' sinus_phase which will trigger contraction if it reaches 1 faster than av_phase";
-    sig_last = time "record timestamp of recognized sinus signal";
-    T = time - pre(sig_last);
-    //TODO can also be done in contraction clause. which one is better? (currently we stick to Seidel's choice)
+    T_avc = T_avc0 + k_avc_t * exp(-T_passed / tau_avc) "schedules next sinus_contraction";
+    sinus_last = time "record timestamp of recognized sinus signal";
+    T = time - pre(sinus_last);
   end when;
   when pre(contraction) then
     cont_last = time "record timestamp of contraction";
