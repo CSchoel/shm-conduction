@@ -1,4 +1,5 @@
 within SHMContraction.Examples;
+// TODO: add ontolgy links with annotation(__Ontology(foo="bar"))
 model UnidirectionalModularExample
   SHMContraction.Components.ModularContraction mc "modular contraction model";
   SHMContraction.Components.Contraction c "original monolithic contraction model";
