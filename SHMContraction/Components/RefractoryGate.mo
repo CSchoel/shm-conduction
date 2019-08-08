@@ -7,8 +7,8 @@ model RefractoryGate
 protected
   Real t_last(start=t_first, fixed=true) "time of last output";
 equation
-  outp = inp and refrac_passed;
-  when outp then
+  outp.s = inp.s and refrac_passed;
+  when outp.s then
     t_last = time;
   end when;
 end RefractoryGate;

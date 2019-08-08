@@ -1,7 +1,8 @@
 within SHMContraction.Components;
 partial model UnidirectionalContractionComponent
-  input InstantSignal inp "input connector";
-  output InstantSignal outp "output connector";
+  import SHMContraction.Components.Connectors.{InstantInput, InstantOutput};
+  InstantInput inp "input connector";
+  InstantOutput outp "output connector";
   annotation(
         Icon(
             coordinateSystem(

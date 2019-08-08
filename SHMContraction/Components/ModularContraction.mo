@@ -12,7 +12,7 @@ equation
   connect(refrac.outp, pace.reset);
   connect(refrac.outp, cdelay.inp);
   connect(cdelay.outp, outp);
-  when outp then
+  when outp.s then
     T = time - pre(cont_last);
     cont_last = time;
   end when;
