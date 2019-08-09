@@ -14,4 +14,23 @@ partial model Resettable
       )
     )
   );
+  annotation(
+    Icon(
+      coordinateSystem(
+        preserveAspectRatio= false,
+        extent= {{-100,-100},{100,100}}
+      ),
+      graphics= {
+        Line(
+          origin= {-100,100},
+          pattern= LinePattern.Solid,
+          thickness= 1.5,
+          arrowSize= 1.5,
+          points= {{82.25, -192.58}, {114.50, -192.58}, {114.50, -180.64}, {81.84, -180.64}},
+          arrow= {Arrow.None, Arrow.Open},
+          rotation= 0
+        )
+      }
+    )
+  );
 end Resettable;

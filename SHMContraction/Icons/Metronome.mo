@@ -41,15 +41,6 @@ model Metronome "metronome icon for pacemaker"
           fillPattern= FillPattern.Solid,
           fillColor= {0,0,0},
           rotation= 0
-        ),
-        Line(
-          origin= {-100,100},
-          pattern= LinePattern.Solid,
-          thickness= 2,
-          arrowSize= 2,
-          points= {{82.25, -187.58}, {114.50, -187.58}, {114.50, -169.64}, {81.84, -169.64}},
-          arrow= {Arrow.None, Arrow.Open},
-          rotation= 0
         )
       }
     )
