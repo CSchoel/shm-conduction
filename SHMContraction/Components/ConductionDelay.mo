@@ -1,6 +1,7 @@
 within SHMContraction.Components;
 partial model ConductionDelay
   extends UnidirectionalContractionComponent;
+  extends SHMContraction.Icons.Hourglass;
   discrete Modelica.SIunits.Duration duration "delay duration";
   discrete Modelica.SIunits.Period T(start=0, fixed=true) "time between last output and following signal";
   discrete Modelica.SIunits.Time t_last(start=0, fixed=true) "time of last output";

@@ -1,6 +1,7 @@
 within SHMContraction.Components;
 model RefractoryGate
   extends UnidirectionalContractionComponent;
+  extends SHMContraction.Icons.Gate;
   parameter Modelica.SIunits.Time t_first = 0 "time of first signal";
   parameter Modelica.SIunits.Period T_refrac = 1 "refractory period";
   Boolean refrac_passed = time - pre(t_last) > T_refrac "true if component is ready to receive a signal";

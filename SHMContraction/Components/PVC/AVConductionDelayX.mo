@@ -11,4 +11,26 @@ equation
   when inp.s and pre(delay_passed) then
     duration = T_avc0 + k_avc_t * exp(-T/tau_avc);
   end when;
+  annotation(
+    Icon(
+      coordinateSystem(
+        preserveAspectRatio= false,
+        extent= {{-100,-100},{100,100}}
+      ),
+      graphics= {
+        Text(
+          origin= {-100,100},
+          lineThickness= 0.56,
+          fontName= sans-serif,
+          extent= {{18.76,-87.62},{75.20,-115.84}},
+          pattern= LinePattern.Solid,
+          textString= "AVN",
+          fontSize= 79.9999996978,
+          lineColor= {0,0,0},
+          horizontalAlignment= TextAlignment.Left,
+          rotation= 0
+        )
+      }
+    )
+  );
 end AVConductionDelayX;

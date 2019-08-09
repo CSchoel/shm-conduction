@@ -1,6 +1,7 @@
 within SHMContraction.Components;
 model Pacemaker
   extends UnidirectionalContractionComponent;
+  extends SHMContraction.Icons.Metronome;
   parameter Modelica.SIunits.Period T = 1 "pacemaker period";
   input InstantSignal reset "signal that resets the internal clock";
   InstantSignal spontaneous_signal = time > pre(t_next)
