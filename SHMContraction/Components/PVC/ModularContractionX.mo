@@ -17,9 +17,9 @@ equation
   connect(refrac.outp, cdelay.inp);
   vref.inp.s = pvc or cdelay.outp.s;
   connect(vref.outp, outp);
-  pace.reset = pvc_upward or refrac.outp.s;
-  connect(pvc_upward, refrac.reset);
-  connect(pvc_upward, cdelay.reset);
+  pace.reset.s = pvc_upward or refrac.outp.s;
+  connect(pvc_upward, refrac.reset.s);
+  connect(pvc_upward, cdelay.reset.s);
   when outp.s then
     T = time - pre(cont_last);
     cont_last = time;

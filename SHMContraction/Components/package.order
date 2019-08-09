@@ -3,6 +3,7 @@ PVC
 Contraction
 InstantSignal
 UnidirectionalContractionComponent
+Resettable
 Pacemaker
 RefractoryGate
 ConductionDelay
