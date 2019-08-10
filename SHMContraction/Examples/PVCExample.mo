@@ -19,11 +19,11 @@ model PVCExample
 equation
   con.pvc = edge(trigger);
   if with_sinus then
-    con.inp.s = sample(0, T_normal) "undisturbed normal sinus rhythm";
+    con.inp = sample(0, T_normal) "undisturbed normal sinus rhythm";
   else
-    con.inp.s = false "no sinus, only AV node";
+    con.inp = false "no sinus, only AV node";
   end if;
-  when con.refrac.outp.s then
+  when con.refrac.outp then
     count_sig = pre(count_sig) + 1;
     sig_last = time;
   end when;

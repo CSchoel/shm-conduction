@@ -8,7 +8,7 @@ model AVConductionDelay
 initial equation
   duration = initial_T_avc;
 equation
-  when inp.s and pre(delay_passed) then
+  when inp and pre(delay_passed) then
     duration = T_avc0 + k_avc_t * exp(-T/tau_avc);
   end when;
   annotation(

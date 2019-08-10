@@ -9,8 +9,8 @@ model RefractoryGateX
 protected
   Modelica.SIunits.Time t_last(start=t_first, fixed=true) "time of last output";
 equation
-  outp.s = inp.s and refrac_passed;
-  when outp.s or reset.s then
+  outp = inp and refrac_passed;
+  when outp or reset then
     t_last = time;
   end when;
 end RefractoryGateX;

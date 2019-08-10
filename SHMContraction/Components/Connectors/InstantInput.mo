@@ -1,6 +1,5 @@
 within SHMContraction.Components.Connectors;
-connector InstantInput
-  input InstantSignal s;
+connector InstantInput = input InstantSignal
   annotation(
     Icon(
       coordinateSystem(
@@ -19,5 +18,5 @@ connector InstantInput
         )
       }
     )
-  );
-end InstantInput;
+  )
+;

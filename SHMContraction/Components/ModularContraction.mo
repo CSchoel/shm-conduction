@@ -46,7 +46,7 @@ equation
   connect(cdelay.outp, outp) annotation(
     Line(thickness = 1, points = {{84, 0}, {102, 0}, {102, 0}, {102, 0}})
   );
-  when outp.s then
+  when outp then
     T = time - pre(cont_last);
     cont_last = time;
   end when;

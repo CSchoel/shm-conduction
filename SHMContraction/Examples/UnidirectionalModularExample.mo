@@ -4,7 +4,7 @@ model UnidirectionalModularExample
   SHMContraction.Components.ModularContraction mc "modular contraction model";
   SHMContraction.Components.Contraction c "original monolithic contraction model";
 equation
-  mc.inp.s = c.signal;
+  mc.inp = c.signal;
   if time < 5 then
     c.signal = sample(0,1);
   elseif time < 15 then

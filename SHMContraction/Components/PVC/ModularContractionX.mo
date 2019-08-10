@@ -1,7 +1,8 @@
 within SHMContraction.Components.PVC;
 model ModularContractionX
-  extends UnidirectionalContractionComponent(outp.s.fixed=true);
-  // outp.s is used in a when equation, so we need an initial value
+  extends UnidirectionalContractionComponent(outp.fixed=true);
+  import SHMContraction.Components.Connectors.InstantInput;
+  // outp is used in a when equation, so we need an initial value
   // TODO check if reasoning is correct
   RefractoryGateX refrac(T_refrac=0.364) "refractory component for AV node" annotation(
     Placement(
@@ -41,7 +42,7 @@ model ModularContractionX
   );
   discrete Modelica.SIunits.Period T(start=1, fixed=true) "duration of last heart cycle";
   discrete Modelica.SIunits.Time cont_last(start=0, fixed=true) "time of last contraction";
-  InstantInput pvc(s.fixed=true) "trigger signal for a PVC" annotation(
+  InstantInput pvc(fixed=true) "trigger signal for a PVC" annotation(
     Placement(
       visible = true,
       transformation(
@@ -124,7 +125,7 @@ equation
   connect(pvc, vcont.u2) annotation(
     Line(points = {{76, -76}, {70, -76}, {70, -50}, {16, -50}, {16, -44}, {30, -44}})
   );
-  when outp.s then
+  when outp then
     T = time - pre(cont_last);
     cont_last = time;
   end when;
