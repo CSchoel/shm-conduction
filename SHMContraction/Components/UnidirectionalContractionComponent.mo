@@ -36,7 +36,7 @@ partial model UnidirectionalContractionComponent
       graphics= {
         Ellipse(
           origin= {-100,100},
-          lineThickness= 4,
+          lineThickness= 2,
           pattern= LinePattern.Solid,
           fillPattern= FillPattern.None,
           extent= {{2,-2},{198,-198}},
