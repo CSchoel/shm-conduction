@@ -10,7 +10,7 @@ protected
   discrete Modelica.SIunits.Time t_next(start=T, fixed=true);
 equation
   outp = inp or spontaneous_signal;
-  when spontaneous_signal or reset then
+  when spontaneous_signal or pre(reset) then
     t_next = time + T;
   end when;
 end Pacemaker;
