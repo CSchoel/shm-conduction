@@ -1,6 +1,7 @@
 within SHMContraction.Components.PVC;
 model ModularContractionX
   extends UnidirectionalContractionComponent(outp.fixed=true);
+  extends SHMContraction.Icons.Heart;
   import SHMContraction.Components.Connectors.InstantInput;
   // outp is used in a when equation, so we need an initial value
   // TODO check if reasoning is correct
@@ -129,4 +130,31 @@ equation
     T = time - pre(cont_last);
     cont_last = time;
   end when;
+  annotation(
+    Icon(
+      graphics = {
+        Line(
+          origin = {-75, 5},
+          points = {{-17, -5}, {17, 5}},
+          arrow = {Arrow.None, Arrow.Open},
+          thickness = 1,
+          arrowSize = 5
+        ),
+        Line(
+          origin = {75, -20},
+          points = {{-19, -18}, {19, 18}},
+          arrow = {Arrow.None, Arrow.Open},
+          thickness = 1,
+          arrowSize = 5
+        ),
+        Line(
+          origin = {60, -64},
+          points = {{6, 0}, {-6, 0}},
+          arrow = {Arrow.None, Arrow.Open},
+          thickness = 1,
+          arrowSize = 5
+        )
+      }
+    )
+  );
 end ModularContractionX;
