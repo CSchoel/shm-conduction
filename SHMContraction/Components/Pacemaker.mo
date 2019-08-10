@@ -2,7 +2,7 @@ within SHMContraction.Components;
 model Pacemaker
   extends UnidirectionalContractionComponent;
   extends SHMContraction.Icons.Metronome;
-  extends Resettable; // resets internal clock
+  extends Resettable(reset.fixed=true); // resets internal clock
   parameter Modelica.SIunits.Period T = 1 "pacemaker period";
   InstantSignal spontaneous_signal = time > pre(t_next)
     "signal generated spontaneously by this pacemaker";

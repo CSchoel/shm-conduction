@@ -2,7 +2,7 @@ within SHMContraction.Components.PVC;
 partial model ConductionDelayX
   extends UnidirectionalContractionComponent;
   extends SHMContraction.Icons.Hourglass;
-  extends Resettable; // cancels a signal that is currently on hold
+  extends Resettable(reset.fixed=true); // cancels a signal that is currently on hold
   Modelica.SIunits.Duration duration "delay duration";
   Modelica.SIunits.Period T(start=0, fixed=true) "time between last output and following signal";
   Modelica.SIunits.Time t_last(start=0, fixed=true) "time of last output";
