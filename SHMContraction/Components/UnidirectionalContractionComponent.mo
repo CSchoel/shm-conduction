@@ -1,5 +1,5 @@
 within SHMContraction.Components;
-partial model UnidirectionalContractionComponent
+partial model UnidirectionalContractionComponent "basic interface class with single input and output"
   import SHMContraction.Components.Connectors.{InstantInput, InstantOutput};
   InstantInput inp "input connector" annotation(
     Placement(

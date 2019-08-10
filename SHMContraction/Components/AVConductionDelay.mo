@@ -1,5 +1,5 @@
 within SHMContraction.Components;
-model AVConductionDelay
+model AVConductionDelay "conduction delay between start of AV node and ventricles"
   extends ConductionDelay;
   parameter Modelica.SIunits.Duration k_avc_t = 0.78 "maximum increase in delay duration";
   parameter Modelica.SIunits.Duration T_avc0 = 0.09 "minimal delay duration";

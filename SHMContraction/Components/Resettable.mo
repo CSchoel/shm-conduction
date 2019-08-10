@@ -1,5 +1,5 @@
 within SHMContraction.Components;
-partial model Resettable
+partial model Resettable "base class for all components that need a reset input"
   import SHMContraction.Components.Connectors.InstantInput;
   InstantInput reset "signal that resets internal variables" annotation(
     Placement(

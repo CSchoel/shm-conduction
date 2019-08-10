@@ -1,5 +1,5 @@
 within SHMContraction;
-package Components
+package Components "contains individual modules"
   type InstantSignal = Boolean(quantity="InstantSignal")
     "signal that is only true for infinitesimal time instants (i.e. that behaves as Kronecker delta)";
 annotation(Documentation(info="<html>

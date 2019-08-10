@@ -1,5 +1,5 @@
 within SHMContraction.Components;
-model Pacemaker
+model Pacemaker "pacemaker that can elicit spontaneous signals and transmit incoming signals"
   extends UnidirectionalContractionComponent;
   extends SHMContraction.Icons.Metronome;
   extends Resettable(reset.fixed=true); // resets internal clock

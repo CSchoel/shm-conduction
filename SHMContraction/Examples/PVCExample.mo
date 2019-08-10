@@ -1,5 +1,5 @@
 within SHMContraction.Examples;
-model PVCExample
+model PVCExample "experiment to test response of ModularContractionX to PVCs"
   SHMContraction.Components.PVC.ModularContractionX con;
   discrete Modelica.SIunits.Time sig_last(start=0, fixed=true) "time where last SA/AV signal was received";
   Integer count_sig(start=0, fixed=true) "counts SA/AV signals";

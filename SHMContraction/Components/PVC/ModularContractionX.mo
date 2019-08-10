@@ -1,5 +1,5 @@
 within SHMContraction.Components.PVC;
-model ModularContractionX
+model ModularContractionX "cardiac conduction system with trigger for PVCs"
   extends UnidirectionalContractionComponent(outp.fixed=true);
   extends SHMContraction.Icons.Heart;
   import SHMContraction.Components.Connectors.InstantInput;

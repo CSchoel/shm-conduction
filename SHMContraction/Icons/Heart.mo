@@ -1,5 +1,5 @@
 within SHMContraction.Icons;
-model Heart
+model Heart "heart icon for full model of cardiac conduction system"
   annotation(
     Icon(
       coordinateSystem(

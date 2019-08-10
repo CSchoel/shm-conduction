@@ -1,5 +1,5 @@
 within SHMContraction.Components.PVC;
-model AVConductionDelayX
+model AVConductionDelayX "resettable variant of AVConductionDelay (resetting cancels delayed signals)"
   extends ConductionDelayX;
   parameter Modelica.SIunits.Duration k_avc_t = 0.78 "maximum increase in delay duration";
   parameter Modelica.SIunits.Duration T_avc0 = 0.09 "minimal delay duration";

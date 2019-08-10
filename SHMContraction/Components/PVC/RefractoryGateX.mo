@@ -1,5 +1,5 @@
 within SHMContraction.Components.PVC;
-model RefractoryGateX
+model RefractoryGateX "resettable variant of RefractoryGate"
   extends UnidirectionalContractionComponent;
   extends SHMContraction.Icons.Gate;
   extends Resettable; // resets internal clock

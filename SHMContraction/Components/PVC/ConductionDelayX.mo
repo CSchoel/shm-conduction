@@ -1,5 +1,5 @@
 within SHMContraction.Components.PVC;
-partial model ConductionDelayX
+partial model ConductionDelayX "resettable variant of ConductionDelay (resetting cancels delayed signals)"
   extends UnidirectionalContractionComponent;
   extends SHMContraction.Icons.Hourglass;
   extends Resettable(reset.fixed=true); // cancels a signal that is currently on hold

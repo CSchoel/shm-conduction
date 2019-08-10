@@ -1,5 +1,5 @@
 within SHMContraction.Components;
-partial model ConductionDelay
+partial model ConductionDelay "cardiac conduction delay that depends on previous cycle duration"
   extends UnidirectionalContractionComponent;
   extends SHMContraction.Icons.Hourglass;
   discrete Modelica.SIunits.Duration duration "delay duration";

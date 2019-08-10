@@ -1,5 +1,5 @@
 within SHMContraction.Components.Connectors;
-connector InstantOutput = output InstantSignal
+connector InstantOutput = output InstantSignal "output with Kronecker delta behavior"
   annotation(
     Icon(
       coordinateSystem(
