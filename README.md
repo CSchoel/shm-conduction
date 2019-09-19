@@ -39,9 +39,9 @@ For Figure 2:
 
 ## References
 
-[1]: (#seidel1997)
-[2]: (#schoelzel2015)
-[3]: (#schoelzel2019)
+[1]: #seidel1997
+[2]: #schoelzel2015
+[3]: #schoelzel2019
 
 \[<a name="seidel1997">1</a>\] H. Seidel, “Nonlinear dynamics of physiological rhythms,” PhD thesis, Technische Universität Berlin, Berlin, Germany, 1997.
 
