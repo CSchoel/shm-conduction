@@ -35,7 +35,7 @@ For Figure 1:
 For Figure 2:
 
 * Open the model `SHMContraction.Examples.PVCExample` (select from "Libraries Browser" on the left hand side with a double click).
-* Navigate to the "Text View" (![blue rectangle with white lines of code](data:image/gif;base64,R0lGODlhDQANAKU+ABxFrx1GsB5GsB5HsChOsTVWszhZtDlatDpatDpbuDtbtTpctTtctTxdtTxdtj1dtTxetj5euT9ftj9ft0FgtUNitkJiukJiu0hmvEpnt0xot09rvVZwv193wnKGx32Oyn6Qy3qRz4OX0I2bxIybz5WixpaixqKv2qCx3amxyqmyyqqyy6y0y620y621yq21y7C2y6+3y7G4y7O5y7S5zLC737G837PB5cHEz8LG0MPL5snL0MrL0MTM5v///////yH5BAEKAD8ALAAAAAANAA0AAAZrQB4NRiwWZzuZpsBsNjMtFwOzqVo3iUPKJbH1vuCeyLFFAACCgVodMJQBF9RtPg9B3ud83v2a1HSAgCdnBiovChYYiooRhCsvDyAkk5QkHQyPDR4fnJ0fHAsrMRUEpaamFCw5JiOtrq4lOEEAOw==)) in the gray bar under the tab `PVCExample`.
+* Navigate to the "Text View" (![blue rectangle with white lines of code](TextViewOMEdit_13.gif)) in the gray bar under the tab `PVCExample`.
 * Change the value of the parameter `with_sinus` either to `true` to produce the left subfigure or to `false` for the right subfigure.
 * Simulate the model with "Simulation" → "Simulate".
 * In the "Variables Browser" on the right hand side select the variable `con.T`.
