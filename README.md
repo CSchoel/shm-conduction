@@ -23,19 +23,22 @@ The main parts of this project can be found in the following files:
 If you want to reproduce the plots in \[[3]\], you can do so in the following steps:
 
 1. Download and install [OpenModelica](https://openmodelica.org/).
-2. Clone or download this repository.
-3. Start OMEdit and open the folder `SHMContraction` with File ➡️ Load Library....
+2. Clone this repository with Git or download a [ZIP file of the current master branch](https://github.com/CSchoel/shm-contraction/archive/master.zip) and extract it with an archive manager of your choice.
+3. Start OMEdit and open the folder `SHMContraction` with "File" → "Load Library".
 
 For Figure 1:
 
-* Open the model `SHMContraction/Examples/UnidirectionalModularExample` (select from navigation window on the left side with a double click).
-* Select the simulate button from the tool bar, leave all settings at their default values, and click on "simulate".
+* Open the model `SHMContraction.Examples.UnidirectionalModularExample` (select from "Libraries Browser" on the left hand side with a double click).
+* Simulate the model with "Simulation" → "Simulate".
+* In the "Variables Browser" on the right hand side select the variables `c.T_cont` and `mc.T`.
 
 For Figure 2:
 
-* Open the model `SHMContraction/Examples/PVCExample` (select from navigation window on the left side with a double click).
-* In the parameter view select `with_sinus` either to be `true` to produce the left subfigure or `false` for the right subfigure.
-* Select the simulate button from the tool bar, leave all settings at their default values, and click on "simulate".
+* Open the model `SHMContraction.Examples.PVCExample` (select from "Libraries Browser" on the left hand side with a double click).
+* Navigate to the "Text View" (<img src="data:image/gif;base64,R0lGODlhDQANAKU+ABxFrx1GsB5GsB5HsChOsTVWszhZtDlatDpatDpbuDtbtTpctTtctTxdtTxdtj1dtTxetj5euT9ftj9ft0FgtUNitkJiukJiu0hmvEpnt0xot09rvVZwv193wnKGx32Oyn6Qy3qRz4OX0I2bxIybz5WixpaixqKv2qCx3amxyqmyyqqyy6y0y620y621yq21y7C2y6+3y7G4y7O5y7S5zLC737G837PB5cHEz8LG0MPL5snL0MrL0MTM5v///////yH5BAEKAD8ALAAAAAANAA0AAAZrQB4NRiwWZzuZpsBsNjMtFwOzqVo3iUPKJbH1vuCeyLFFAACCgVodMJQBF9RtPg9B3ud83v2a1HSAgCdnBiovChYYiooRhCsvDyAkk5QkHQyPDR4fnJ0fHAsrMRUEpaamFCw5JiOtrq4lOEEAOw==" alt="blue rectangle with white lines of code" />) in the gray bar under the tab `PVCExample`.
+* Change the value of the parameter `with_sinus` either to `true` to produce the left subfigure or to `false` for the right subfigure.
+* Simulate the model with "Simulation" → "Simulate".
+* In the "Variables Browser" on the right hand side select the variable `con.T`.
 
 ## References
 
