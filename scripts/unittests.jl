@@ -44,5 +44,7 @@ try
     end
 finally
     println("Closing OMC session")
+    sleep(1)
     omc.sendExpression("quit()")
+    println("Done")
 end
