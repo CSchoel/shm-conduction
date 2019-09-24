@@ -23,7 +23,7 @@ try
         @test r == "true\n"
         es = omc.sendExpression("getErrorString()")
         @test es == "\"\"\n"
-        r = omc.sendExpression("simulate(SHMConduction.Examples.ModularExample, stopTime=50, numberOfIntervals=27500)")
+        r = omc.sendExpression("simulate(SHMConduction.Examples.ModularExample, stopTime=50, numberOfIntervals=27500, outputFormat=\"csv\")")
         es = omc.sendExpression("getErrorString()")
         @test es == "\"\"\n"
     end
@@ -32,7 +32,7 @@ try
         @test r == "true\n"
         es = omc.sendExpression("getErrorString()")
         @test es == "\"\"\n"
-        r = omc.sendExpression("simulate(SHMConduction.Examples.PVCExample, stopTime=50, numberOfIntervals=27500)")
+        r = omc.sendExpression("simulate(SHMConduction.Examples.PVCExample, stopTime=50, numberOfIntervals=27500, outputFormat=\"csv\")")
         es = omc.sendExpression("getErrorString()")
         @test es == "\"\"\n"
     end
