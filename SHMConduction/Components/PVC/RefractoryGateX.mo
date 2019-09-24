@@ -1,6 +1,6 @@
 within SHMConduction.Components.PVC;
 model RefractoryGateX "resettable variant of RefractoryGate"
-  extends UnidirectionalContractionComponent;
+  extends UnidirectionalConductionComponent;
   extends SHMConduction.Icons.Gate;
   extends Resettable; // resets internal clock
   parameter Modelica.SIunits.Time t_first = 0 "time of first signal";

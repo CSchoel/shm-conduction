@@ -1,6 +1,6 @@
 within SHMConduction.Components;
-model ModularContraction "modular version of the model of the cardiac conduction system by H. Seidel"
-  extends UnidirectionalContractionComponent;
+model ModularConduction "modular version of the model of the cardiac conduction system by H. Seidel"
+  extends UnidirectionalConductionComponent;
   extends SHMConduction.Icons.Heart;
   RefractoryGate refrac(T_refrac=0.364) "refractory component for AV node" annotation(
     Placement(
@@ -71,4 +71,4 @@ equation
       }
     )
   );
-end ModularContraction;
+end ModularConduction;

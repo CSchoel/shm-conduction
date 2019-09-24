@@ -1,6 +1,6 @@
 within SHMConduction.Components;
 model Pacemaker "pacemaker that can elicit spontaneous signals and transmit incoming signals"
-  extends UnidirectionalContractionComponent;
+  extends UnidirectionalConductionComponent;
   extends SHMConduction.Icons.Metronome;
   extends Resettable(reset.fixed=true); // resets internal clock
   parameter Modelica.SIunits.Period T = 1 "pacemaker period";

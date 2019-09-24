@@ -1,6 +1,6 @@
 within SHMConduction.Components;
 partial model ConductionDelay "cardiac conduction delay that depends on previous cycle duration"
-  extends UnidirectionalContractionComponent;
+  extends UnidirectionalConductionComponent;
   extends SHMConduction.Icons.Hourglass;
   discrete Modelica.SIunits.Duration duration "delay duration";
   discrete Modelica.SIunits.Period T(start=0, fixed=true) "time between last output and following signal";

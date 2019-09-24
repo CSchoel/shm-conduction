@@ -1,5 +1,5 @@
 within SHMConduction.Components;
-partial model UnidirectionalContractionComponent "basic interface class with single input and output"
+partial model UnidirectionalConductionComponent "basic interface class with single input and output"
   import SHMConduction.Components.Connectors.{InstantInput, InstantOutput};
   InstantInput inp "input connector" annotation(
     Placement(
@@ -45,4 +45,4 @@ partial model UnidirectionalContractionComponent "basic interface class with sin
       }
     )
   );
-end UnidirectionalContractionComponent;
+end UnidirectionalConductionComponent;

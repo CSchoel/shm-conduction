@@ -1,6 +1,6 @@
 within SHMConduction.Examples;
-model PVCExample "experiment to test response of ModularContractionX to PVCs"
-  SHMConduction.Components.PVC.ModularContractionX con;
+model PVCExample "experiment to test response of ModularConductionX to PVCs"
+  SHMConduction.Components.PVC.ModularConductionX con;
   discrete Modelica.SIunits.Time sig_last(start=0, fixed=true) "time where last SA/AV signal was received";
   Integer count_sig(start=0, fixed=true) "counts SA/AV signals";
   parameter Boolean with_sinus = true "if true, a sinus signal is applied, otherwise only the AV node is active";

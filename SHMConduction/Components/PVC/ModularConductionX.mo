@@ -1,6 +1,6 @@
 within SHMConduction.Components.PVC;
-model ModularContractionX "cardiac conduction system with trigger for PVCs"
-  extends UnidirectionalContractionComponent(outp.fixed=true);
+model ModularConductionX "cardiac conduction system with trigger for PVCs"
+  extends UnidirectionalConductionComponent(outp.fixed=true);
   extends SHMConduction.Icons.Heart;
   import SHMConduction.Components.Connectors.InstantInput;
   // outp is used in a when equation, so we need an initial value
@@ -157,4 +157,4 @@ equation
       }
     )
   );
-end ModularContractionX;
+end ModularConductionX;

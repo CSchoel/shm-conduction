@@ -1,6 +1,6 @@
 within SHMConduction.Components;
 model RefractoryGate "refractory gate that can block or transmit signals"
-  extends UnidirectionalContractionComponent;
+  extends UnidirectionalConductionComponent;
   extends SHMConduction.Icons.Gate;
   parameter Modelica.SIunits.Time t_first = 0 "time of first signal";
   parameter Modelica.SIunits.Period T_refrac = 1 "refractory period";

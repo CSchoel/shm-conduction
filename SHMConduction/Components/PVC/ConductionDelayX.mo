@@ -1,6 +1,6 @@
 within SHMConduction.Components.PVC;
 partial model ConductionDelayX "resettable variant of ConductionDelay (resetting cancels delayed signals)"
-  extends UnidirectionalContractionComponent;
+  extends UnidirectionalConductionComponent;
   extends SHMConduction.Icons.Hourglass;
   extends Resettable(reset.fixed=true); // cancels a signal that is currently on hold
   Modelica.SIunits.Duration duration "delay duration";

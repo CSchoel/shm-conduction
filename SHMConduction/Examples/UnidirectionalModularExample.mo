@@ -1,8 +1,8 @@
 within SHMConduction.Examples;
 // TODO: add ontolgy links with annotation(__Ontology(foo="bar"))
-model UnidirectionalModularExample "experiment to compare Contraction and ModularContraction"
-  SHMConduction.Components.ModularContraction mc "modular contraction model";
-  SHMConduction.Components.Contraction c "original monolithic contraction model";
+model UnidirectionalModularExample "experiment to compare Conduction and ModularConduction"
+  SHMConduction.Components.ModularConduction mc "modular contraction model";
+  SHMConduction.Components.Conduction c "original monolithic contraction model";
 equation
   mc.inp = c.signal;
   if time < 5 then

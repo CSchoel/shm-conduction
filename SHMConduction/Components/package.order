@@ -1,11 +1,11 @@
 Connectors
 PVC
-Contraction
+Conduction
 InstantSignal
-UnidirectionalContractionComponent
+UnidirectionalConductionComponent
 Resettable
 Pacemaker
 RefractoryGate
 ConductionDelay
 AVConductionDelay
-ModularContraction
+ModularConduction

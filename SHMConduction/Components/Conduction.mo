@@ -1,5 +1,5 @@
 within SHMConduction.Components;
-model Contraction "cardiac conduction system of the human heart adapted from the doctorate thesis of H. Seidel"
+model Conduction "cardiac conduction system of the human heart adapted from the doctorate thesis of H. Seidel"
   parameter Modelica.SIunits.Duration T_refrac = 0.22 "refractory period that has to pass until a signal from the sinus node can take effect again";
   parameter Modelica.SIunits.Period T_av = 1.7 "av-node cycle duration";
   parameter Modelica.SIunits.Duration k_avc_t = 0.78 "sensitivity of the atrioventricular conduction time to the time passed since the last ventricular conduction";
@@ -60,4 +60,4 @@ equation
   not capable of handling discrete equation systems. Therefore it was necessary to introduce the continuous phases <b>av_phase</b>,
   <b>sinus_phase</b> and <b>refrac_countdown</b>, as well as the continuous variable condition <b>signal_received_cont</b>.</i></p>
 </html>"));
-end Contraction;
+end Conduction;
