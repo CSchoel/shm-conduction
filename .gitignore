@@ -1,3 +1,6 @@
 # Mo|E
 target
 mope-project.json
+
+# Julia script output directory
+out
