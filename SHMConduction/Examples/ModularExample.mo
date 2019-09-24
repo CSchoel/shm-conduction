@@ -1,6 +1,6 @@
 within SHMConduction.Examples;
 // TODO: add ontolgy links with annotation(__Ontology(foo="bar"))
-model UnidirectionalModularExample "experiment to compare Conduction and ModularConduction"
+model ModularExample "experiment to compare Conduction and ModularConduction"
   SHMConduction.Components.ModularConduction modC "modular contraction model";
   SHMConduction.Components.MonolithicConduction monC "original monolithic contraction model";
 equation
@@ -24,4 +24,4 @@ equation
     experiment(StartTime = 0, StopTime = 50, Tolerance = 1e-6, Interval = 0.002),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "dassl")
   );
-end UnidirectionalModularExample;
+end ModularExample;

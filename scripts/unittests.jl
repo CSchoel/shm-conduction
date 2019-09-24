@@ -19,11 +19,11 @@ try
     # load Modelica standard library
     omc.sendExpression("loadModel(Modelica)")
     @testset "UnidirectionalConductionExample" begin
-        r = omc.sendExpression("loadModel(SHMConduction.Examples.UnidirectionalModularExample)")
+        r = omc.sendExpression("loadModel(SHMConduction.Examples.ModularExample)")
         @test r == "true\n"
         es = omc.sendExpression("getErrorString()")
         @test es == "\"\"\n"
-        r = omc.sendExpression("simulate(SHMConduction.Examples.UnidirectionalModularExample, stopTime=50, numberOfIntervals=27500)")
+        r = omc.sendExpression("simulate(SHMConduction.Examples.ModularExample, stopTime=50, numberOfIntervals=27500)")
         es = omc.sendExpression("getErrorString()")
         @test es == "\"\"\n"
     end

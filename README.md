@@ -15,7 +15,7 @@ The main parts of this project can be found in the following files:
 * `SHMContraction/Components/Contraction.mo` contains the monolithic version of the contraction model.
 * `SHMContraction/Components/ModularContraction.mo` is the main file for the modular version binding all submodules together.
 * `SHMContraction/Components/PVC/ModularContractionX.mo` is the main file for the extended modular version with PVCs.
-* `SHMContraction/Examples/UnidirectionalModularExample.mo` contains a simulation example that compares the monolithic `Contraction.mo` with the modular `ModularContraction.mo`.
+* `SHMContraction/Examples/ModularExample.mo` contains a simulation example that compares the monolithic `Contraction.mo` with the modular `ModularContraction.mo`.
 * `SHMContraction/Examples/PVCExample.mo` contains a simulation example that tests the PVC extension for plausibility.
 
 ## Reproduction of plots from the paper
@@ -28,7 +28,7 @@ If you want to reproduce the plots in \[[3]\], you can do so in the following st
 
 For Figure 1:
 
-* Open the model `SHMContraction.Examples.UnidirectionalModularExample` (select from "Libraries Browser" on the left hand side with a double click).
+* Open the model `SHMContraction.Examples.ModularExample` (select from "Libraries Browser" on the left hand side with a double click).
 * Simulate the model with "Simulation" → "Simulate".
 * In the "Variables Browser" on the right hand side select the variables `c.T_cont` and `mc.T`.
 
