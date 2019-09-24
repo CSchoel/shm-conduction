@@ -35,6 +35,12 @@ try
         r = omc.sendExpression("simulate(SHMConduction.Examples.PVCExample, stopTime=50, numberOfIntervals=27500, outputFormat=\"csv\")")
         es = omc.sendExpression("getErrorString()")
         @test es == "\"\"\n"
+        # we cannot change with_sinus using simflags and -override
+        # because it is a structural parameter => create wrapper model
+        r = omc.sendExpression("model PVCNoSinus extends SHMConduction.Examples.PVCExample(with_sinus=false); end PVCNoSinus;")
+        r = omc.sendExpression("simulate(PVCNoSinus, stopTime=50, numberOfIntervals=27500, outputFormat=\"csv\")")
+        es = omc.sendExpression("getErrorString()")
+        @test es == "\"\"\n"
     end
 finally
     println("Closing OMC session")
