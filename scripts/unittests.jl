@@ -1,19 +1,15 @@
 using OMJulia
 using Base.Filesystem
 
-cd(@__DIR__)
-cd("..")
-mofiles = []
-println("foo")
-for (root, dirs, files) in walkdir("SHMConduction")
-    global mofiles
-    mofiles = vcat(mofiles, [joinpath(root, f) for f in files if endswith(f, ".mo")])
-end
-println(mofiles)
+moroot = dirname(@__DIR__)
 
 omc = OMJulia.OMCSession()
 try
-    r = omc.sendExpression("loadFiles({$(join(["\"$f\"" for f in mofiles], ", "))})")
+    mopath = omc.sendExpression("getModelicaPath()")[3:end-2]
+    mopath = "$mopath:$(escape_string(moroot))"
+    println("Setting MODELICAPATH to ", mopath)
+    omc.sendExpression("setModelicaPath(\"$mopath\")")
+    r = omc.sendExpression("loadModel(SHMConduction.Examples.UnidirectionalContractionExample)")
     println(r)
     print("Errors: ")
     println(omc.sendExpression("getErrorString()"))
