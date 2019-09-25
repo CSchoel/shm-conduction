@@ -36,7 +36,7 @@ For Figure 1:
 
 * Open the model `SHMConduction.Examples.ModularExample` (select from "Libraries Browser" on the left hand side with a double click).
 * Simulate the model with "Simulation" → "Simulate".
-* In the "Variables Browser" on the right hand side select the variables `c.T_cont` and `mc.T`.
+* In the "Variables Browser" on the right hand side select the variables `monC.T_cont` and `modC.T`.
 
 For Figure 2:
 
