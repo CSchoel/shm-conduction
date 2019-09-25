@@ -5,7 +5,7 @@ install:
   - wget -q http://build.openmodelica.org/apt/openmodelica.asc -O- | sudo apt-key add -
   - sudo apt update
   - sudo apt install openmodelica
-  - julia -e 'using Pkg; Pkg.add(PackageSpec(url="git@github.com:OpenModelica/OMJulia.jl.git"))'
+  - julia -e 'using Pkg; Pkg.add(PackageSpec(url="git@github.com:OpenModelica/OMJulia.jl.git"))' <<< /home/travis/.ssh/id_rsa
 
 script:
   - julia scripts/unittests.jl
