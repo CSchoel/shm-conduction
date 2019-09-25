@@ -6,7 +6,7 @@ install:
   - sudo apt update
   - sudo apt install openmodelica
   # we need the most recent version from the repo for sendExpression("quit()", parsed=false)
-  - julia -e 'using Pkg; Pkg.add(PackageSpec(url="git@github.com:OpenModelica/OMJulia.jl.git"))' <<< /home/travis/.ssh/id_rsa
+  - julia -e 'using Pkg; Pkg.add(PackageSpec(url="git@github.com:OpenModelica/OMJulia.jl.git"))' <<< $'/home/travis/.ssh/id_rsa\n'
 
 script:
   # sometimes ZMQ freezes on sending the message quit() to omc
