@@ -22,7 +22,11 @@ The main parts of this project can be found in the following files:
 
 ## Reproduction of plots from the paper
 
-If you want to reproduce the plots in \[[3]\], you can do so in the following steps:
+If you want to reproduce the plots in \[[3]\], you can alternatively use OMEdit (the IDE of OpenModelica), or the Julia script.
+
+### OMEdit
+
+To reproduce the plots with OMEdit you have to use the following steps:
 
 1. Download and install [OpenModelica](https://openmodelica.org/).
 2. Clone this repository with Git or download a [ZIP file of the current master branch](https://github.com/CSchoel/shm-contraction/archive/master.zip) and extract it with an archive manager of your choice.
@@ -41,6 +45,25 @@ For Figure 2:
 * Change the value of the parameter `with_sinus` either to `true` to produce the left subfigure or to `false` for the right subfigure.
 * Simulate the model with "Simulation" → "Simulate".
 * In the "Variables Browser" on the right hand side select the variable `con.T`.
+
+### Julia script
+
+Using the Julia script in `scripts/unittests.jl` requires additional software, but eliminates the need to interact with OMEdit and allows you to use a plotting library or tool of your choice.
+
+To reproduce the plots you have to use the following steps:
+
+1. Download and install [OpenModelica](https://openmodelica.org/).
+2. Download and install [Julia](https://julialang.org/).
+3. Clone this repository with Git or download a [ZIP file of the current master branch](https://github.com/CSchoel/shm-contraction/archive/master.zip) and extract it with an archive manager of your choice.
+4. Run the following commands in a terminal from the repository folder:
+  * `julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/OpenModelica/OMJulia.jl.git"))'` (we require some features from the latest revision of OMJulia)
+  * `julia scripts/unittests.jl`
+5. This should create the folder `out` with the following result files:
+  * `SHMConduction.Examples.ModularExample_res.csv` contains the data for Figure 1 in the columns `time`, `monC.T_cont` and `modC.T`.
+  * `SHMConduction.Examples.PVCExample_res.csv` contains the data for the left hand side of Figure 2 in the columns `time` and `con.T`.
+  * `PVCNoSinus_res.csv` contains the data for the right hand side of Figure 2 in the columns `time` and `con.T`
+6. Produce the plots with a plotting tool or library of your choice.
+
 
 ## References
 
