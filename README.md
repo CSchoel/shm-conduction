@@ -14,10 +14,10 @@ This will be discussed in detail in an upcoming paper of our research group \[[3
 The main parts of this project can be found in the following files:
 
 * `SHMConduction/package.mo` contains a full description of the models in this project.
-* `SHMConduction/Components/Conduction.mo` contains the monolithic version of the contraction model.
+* `SHMConduction/Components/MonolithicConduction.mo` contains the monolithic version of the contraction model.
 * `SHMConduction/Components/ModularConduction.mo` is the main file for the modular version binding all submodules together.
 * `SHMConduction/Components/PVC/ModularConductionX.mo` is the main file for the extended modular version with PVCs.
-* `SHMConduction/Examples/ModularExample.mo` contains a simulation example that compares the monolithic `Conduction.mo` with the modular `ModularConduction.mo`.
+* `SHMConduction/Examples/ModularExample.mo` contains a simulation example that compares `MonolithicConduction.mo` with `ModularConduction.mo`.
 * `SHMConduction/Examples/PVCExample.mo` contains a simulation example that tests the PVC extension for plausibility.
 
 ## Reproduction of plots from the paper
