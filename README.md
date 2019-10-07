@@ -32,17 +32,17 @@ To reproduce the plots with OMEdit you have to use the following steps:
 2. Clone this repository with Git or download a [ZIP file of the current master branch](https://github.com/CSchoel/shm-contraction/archive/master.zip) and extract it with an archive manager of your choice.
 3. Start OMEdit and open the folder `SHMConduction` with "File" → "Load Library".
 
-For Figure 1:
+For Figure 2:
 
 * Open the model `SHMConduction.Examples.ModularExample` (select from "Libraries Browser" on the left hand side with a double click).
 * Simulate the model with "Simulation" → "Simulate".
 * In the "Variables Browser" on the right hand side select the variables `monC.T_cont` and `modC.T`.
 
-For Figure 2:
+For Figure 4:
 
 * Open the model `SHMConduction.Examples.PVCExample` (select from "Libraries Browser" on the left hand side with a double click).
 * Navigate to the "Text View" (![blue rectangle with white lines of code](TextViewOMEdit_13.gif)) in the gray bar under the tab `PVCExample`.
-* Change the value of the parameter `with_sinus` either to `true` to produce the left subfigure or to `false` for the right subfigure.
+* Change the value of the parameter `with_sinus` either to `true` to produce Figure 4a or to `false` for Figure 4b.
 * Simulate the model with "Simulation" → "Simulate".
 * In the "Variables Browser" on the right hand side select the variable `con.T`.
 
@@ -59,9 +59,9 @@ To reproduce the plots you have to use the following steps:
   * `julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/OpenModelica/OMJulia.jl.git"))'` (we require some features from the latest revision of OMJulia)
   * `julia scripts/unittests.jl`
 5. This should create the folder `out` with the following result files:
-  * `SHMConduction.Examples.ModularExample_res.csv` contains the data for Figure 1 in the columns `time`, `monC.T_cont` and `modC.T`.
-  * `SHMConduction.Examples.PVCExample_res.csv` contains the data for the left hand side of Figure 2 in the columns `time` and `con.T`.
-  * `PVCNoSinus_res.csv` contains the data for the right hand side of Figure 2 in the columns `time` and `con.T`
+  * `SHMConduction.Examples.ModularExample_res.csv` contains the data for Figure 2 in the columns `time`, `monC.T_cont` and `modC.T`.
+  * `SHMConduction.Examples.PVCExample_res.csv` contains the data for Figure 4a in the columns `time` and `con.T`.
+  * `PVCNoSinus_res.csv` contains the data for Figure 4b in the columns `time` and `con.T`
 6. Produce the plots with a plotting tool or library of your choice.
 
 
