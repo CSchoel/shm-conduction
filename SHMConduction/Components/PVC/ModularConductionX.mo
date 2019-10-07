@@ -5,7 +5,7 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
   import SHMConduction.Components.Connectors.InstantInput;
   // outp is used in a when equation, so we need an initial value
   // TODO check if reasoning is correct
-  RefractoryGateX refrac(T_refrac=0.364) "refractory component for AV node" annotation(
+  RefractoryGateX refrac_av(T_refrac=0.364) "refractory component for AV node" annotation(
     Placement(
       visible = true,
       transformation(
@@ -14,7 +14,7 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
       )
     )
   );
-  Pacemaker pace(T=1.7) "pacemaker effect of AV node" annotation(
+  Pacemaker pace_av(T=1.7) "pacemaker effect of AV node" annotation(
     Placement(
       visible = true,
       transformation(
@@ -23,7 +23,7 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
       )
     )
   );
-  AVConductionDelayX cdelay "delay from atrial side of AV node to ventricular side" annotation(
+  AVConductionDelayX delay_sa_v "total delay between SA node and ventricles" annotation(
     Placement(
       visible = true,
       transformation(
@@ -32,7 +32,7 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
       )
     )
   );
-  RefractoryGate vref(T_refrac=0.2) "refractory component for ventricles" annotation(
+  RefractoryGate refrac_v(T_refrac=0.2) "refractory component for ventricles" annotation(
     Placement(
       visible = true,
       transformation(
@@ -84,25 +84,25 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
     )
   );
 equation
-  connect(inp, pace.inp) annotation(
+  connect(inp, pace_av.inp) annotation(
     Line(points = {{-100, 0}, {-72, 0}, {-72, 0}, {-70, 0}})
   );
-  connect(pace.outp, refrac.inp) annotation(
+  connect(pace_av.outp, refrac_av.inp) annotation(
     Line(points = {{-50, 0}, {-30, 0}, {-30, 0}, {-30, 0}})
   );
-  connect(refrac.outp, cdelay.inp) annotation(
+  connect(refrac_av.outp, delay_sa_v.inp) annotation(
     Line(points = {{-10, 0}, {10, 0}, {10, 0}, {10, 0}})
   );
-  connect(cdelay.outp, vcont.u1) annotation(
+  connect(delay_sa_v.outp, vcont.u1) annotation(
     Line(points = {{30, 0}, {34, 0}, {34, -22}, {16, -22}, {16, -36}, {30, -36}, {30, -36}})
   );
-  connect(refrac.outp, rpace.u2) annotation(
+  connect(refrac_av.outp, rpace.u2) annotation(
     Line(points = {{-10, 0}, {-6, 0}, {-6, -58}, {-78, -58}, {-78, -46}, {-72, -46}, {-72, -46}})
   );
-  connect(vcont.y, vref.inp) annotation(
+  connect(vcont.y, refrac_v.inp) annotation(
     Line(points = {{54, -36}, {60, -36}, {60, -12}, {42, -12}, {42, 0}, {50, 0}, {50, 0}}, color = {255, 0, 255})
   );
-  connect(vref.outp, outp) annotation(
+  connect(refrac_v.outp, outp) annotation(
     Line(points = {{70, 0}, {98, 0}, {98, 0}, {102, 0}})
   );
   connect(outp, pvc_upward.u1) annotation(
@@ -111,16 +111,16 @@ equation
   connect(pvc, pvc_upward.u2) annotation(
     Line(points = {{76, -76}, {50, -76}, {50, -80}, {32, -80}, {32, -80}})
   );
-  connect(pvc_upward.y, refrac.reset) annotation(
+  connect(pvc_upward.y, refrac_av.reset) annotation(
     Line(points = {{10, -72}, {-20, -72}, {-20, -10}, {-20, -10}}, color = {255, 0, 255})
   );
-  connect(pvc_upward.y, cdelay.reset) annotation(
+  connect(pvc_upward.y, delay_sa_v.reset) annotation(
     Line(points = {{10, -72}, {2, -72}, {2, -18}, {20, -18}, {20, -10}, {20, -10}}, color = {255, 0, 255})
   );
   connect(pvc_upward.y, rpace.u1) annotation(
     Line(points = {{10, -72}, {-84, -72}, {-84, -38}, {-72, -38}, {-72, -38}}, color = {255, 0, 255})
   );
-  connect(rpace.y, pace.reset) annotation(
+  connect(rpace.y, pace_av.reset) annotation(
     Line(points = {{-48, -38}, {-44, -38}, {-44, -16}, {-60, -16}, {-60, -10}, {-60, -10}}, color = {255, 0, 255})
   );
   connect(pvc, vcont.u2) annotation(
