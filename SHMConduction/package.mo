@@ -60,17 +60,17 @@ annotation(Documentation(info="<html>
   The modular versions will be published in an upcoming paper
   <a href=\"#ref3\">[2]</a>.</p>
 
-  <p><a name=\"ref1\">[1]</a> H. Seidel, “Nonlinear dynamics of physiological
-  rhythms,” PhD thesis, Technische Universität Berlin, Berlin, Germany, 1997.
+  <p><a name=\"ref1\">[1]</a> H. Seidel, &ldquo;Nonlinear dynamics of physiological
+  rhythms,&rdquo; PhD thesis, Technische Universität Berlin, Berlin, Germany, 1997.
   </p>
 
   <p><a name=\"ref2\">[2]</a> C. Schölzel, A. Goesmann, G. Ernst, and A. Dominik,
-  “Modeling biology in Modelica: The human baroreflex,” in Proceedings of the
+  &ldquo;Modeling biology in Modelica: The human baroreflex,&ldquo; in Proceedings of the
   11th International Modelica Conference, Versailles, France, 2015, pp.
   367–376.</p>
 
   <p><a name=\"ref3\">[3]</a> C. Schölzel, V. Blesius, G. Ernst and
-  A. Dominik, “Required characteristics for modeling languages in systems
-  biology: A software engineering perspective,” unpublished.</p>
+  A. Dominik, &ldquo;Required characteristics for modeling languages in systems
+  biology: A software engineering perspective,&rdquo; unpublished.</p>
 </html>"));
 end SHMConduction;
