@@ -57,7 +57,7 @@ annotation(Documentation(info="<html>
 
   <p>The Modelica version of the SHM model is described in detail in
   <a href=\"#ref2\">[2]</a>.
-  The modular versions will be published in an oncoming paper
+  The modular versions will be published in an upcoming paper
   <a href=\"#ref3\">[2]</a>.</p>
 
   <p><a name=\"ref1\">[1]</a> H. Seidel, “Nonlinear dynamics of physiological
