@@ -65,7 +65,7 @@ annotation(Documentation(info="<html>
   </p>
 
   <p><a name=\"ref2\">[2]</a> C. Schölzel, A. Goesmann, G. Ernst, and A. Dominik,
-  &ldquo;Modeling biology in Modelica: The human baroreflex,&ldquo; in Proceedings of the
+  &ldquo;Modeling biology in Modelica: The human baroreflex,&rdquo; in Proceedings of the
   11th International Modelica Conference, Versailles, France, 2015, pp.
   367–376.</p>
 
