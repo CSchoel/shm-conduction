@@ -25,6 +25,7 @@ try
             es = OMJulia.sendExpression(omc, "getErrorString()")
             @test es == ""
             r = OMJulia.sendExpression(omc, "simulate(SHMConduction.Examples.ModularExample, stopTime=50, numberOfIntervals=27500, outputFormat=\"csv\")")
+            @test !occursin("| warning |", r["messages"])
             es = OMJulia.sendExpression(omc, "getErrorString()")
             @test es == ""
         end
@@ -34,6 +35,7 @@ try
             es = OMJulia.sendExpression(omc, "getErrorString()")
             @test es == ""
             r = OMJulia.sendExpression(omc, "simulate(SHMConduction.Examples.PVCExample, stopTime=50, numberOfIntervals=27500, outputFormat=\"csv\")")
+            @test !occursin("| warning |", r["messages"])
             es = OMJulia.sendExpression(omc, "getErrorString()")
             @test es == ""
             # we cannot change with_sinus using simflags and -override
