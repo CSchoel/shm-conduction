@@ -4,7 +4,6 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
   extends SHMConduction.Icons.Heart;
   import SHMConduction.Components.Connectors.InstantInput;
   // outp is used in a when equation, so we need an initial value
-  // TODO check if reasoning is correct
   RefractoryGateX refrac_av(T_refrac=0.364) "refractory component for AV node" annotation(
     Placement(
       visible = true,
