@@ -75,4 +75,4 @@ To reproduce the plots you have to use the following steps:
 
 \[<a name="schoelzel2015">2</a>] C. Schölzel, A. Goesmann, G. Ernst, and A. Dominik, “Modeling biology in Modelica: The human baroreflex,” in Proceedings of the 11th International Modelica Conference, Versailles, France, 2015, pp. 367–376.
 
-\[<a name="schoelzel2019">3</a>] C. Schölzel, V. Blesius, G. Ernst and A. Dominik, “Required characteristics for modeling languages in systems biology: A software engineering perspective,” unpublished.
+\[<a name="schoelzel2019">3</a>] C. Schölzel, V. Blesius, G. Ernst and A. Dominik, “The impact of mathematical modeling languages on model quality in systems biology: A software engineering perspective,” unpublished.
