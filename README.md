@@ -69,10 +69,10 @@ To reproduce the plots you have to use the following steps:
 
 [1]: #seidel1997
 [2]: #schoelzel2015
-[3]: #schoelzel2019
+[3]: #schoelzel2020
 
 \[<a name="seidel1997">1</a>\] H. Seidel, “Nonlinear dynamics of physiological rhythms,” PhD thesis, Technische Universität Berlin, Berlin, Germany, 1997.
 
 \[<a name="schoelzel2015">2</a>] C. Schölzel, A. Goesmann, G. Ernst, and A. Dominik, “Modeling biology in Modelica: The human baroreflex,” in Proceedings of the 11th International Modelica Conference, Versailles, France, 2015, pp. 367–376.
 
-\[<a name="schoelzel2019">3</a>] C. Schölzel, V. Blesius, G. Ernst and A. Dominik, “The impact of mathematical modeling languages on model quality in systems biology: A software engineering perspective,” unpublished.
+\[<a name="schoelzel2020">3</a>] C. Schölzel, V. Blesius, G. Ernst and A. Dominik, “The impact of mathematical modeling languages on model quality in systems biology: A software engineering perspective,” unpublished.
