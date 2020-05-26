@@ -99,37 +99,37 @@ def find_pvcs(trigger):
 
 
 if __name__ == "__main__":
-  result_folder = "/home/cslz90/Documents/Promotion/results/modular-contraction/"
+  result_folder = os.path.join(os.path.dirname(__file__), "../out")
   orig_vs_modular = pd.read_csv(
     os.path.join(
       result_folder,
-      "SHMContraction.Examples.UnidirectionalModularExample_res.csv"
+      "SHMConduction.Examples.ModularExample_res.csv"
     )
   )
   pvc_sinus = pd.read_csv(
     os.path.join(
       result_folder,
-      "SHMContraction.Examples.PVCExample_res.csv"
+      "SHMConduction.Examples.PVCExample_res.csv"
     )
   )
   pvc_nosinus = pd.read_csv(
     os.path.join(
       result_folder,
-      "SHMContraction.Examples.PVCExample_nosinus_res.csv"
+      "PVCNoSinus_res.csv"
     )
   )
   plot_mc(
     orig_vs_modular["time"],
-    orig_vs_modular["c.T_cont"],
-    orig_vs_modular["mc.T"],
+    orig_vs_modular["monC.T_cont"],
+    orig_vs_modular["modC.T"],
     outname=os.path.join(result_folder, "plot_mc.pdf")
   )
   plot_pvc(
     pvc_sinus["time"],
-    pvc_sinus["T"],
+    pvc_sinus["con.T"],
     find_pvcs(pvc_sinus["trigger"]),
     pvc_nosinus["time"],
-    pvc_nosinus["T"],
+    pvc_nosinus["con.T"],
     find_pvcs(pvc_nosinus["trigger"]),
     outname=os.path.join(result_folder, "plot_pvc.pdf")
   )
