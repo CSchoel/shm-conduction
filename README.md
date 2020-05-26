@@ -62,7 +62,7 @@ To reproduce the plots you have to use the following steps:
   * `SHMConduction.Examples.ModularExample_res.csv` contains the data for Figure 2 in the columns `time`, `monC.T_cont` and `modC.T`.
   * `SHMConduction.Examples.PVCExample_res.csv` contains the data for Figure 4a in the columns `time` and `con.T`.
   * `PVCNoSinus_res.csv` contains the data for Figure 4b in the columns `time` and `con.T`
-6. Produce the plots with a plotting tool or library of your choice.
+6. Produce the plots with a plotting tool or library of your choice or use the already existing Python script in `scripts/plot_mc_compare.py` which will write the plots as PDF files in to the `out` folder.
 
 
 ## References
