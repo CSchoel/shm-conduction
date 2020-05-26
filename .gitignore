@@ -4,3 +4,6 @@ mope-project.json
 
 # Julia script output directory
 out
+
+# Merge conflicts
+*.orig
