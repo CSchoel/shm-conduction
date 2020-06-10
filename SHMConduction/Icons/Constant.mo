@@ -1,5 +1,5 @@
 within SHMConduction.Icons;
-model Constant
+model Constant "small box with a C in upper right corner"
     annotation(
         Icon(
             coordinateSystem(

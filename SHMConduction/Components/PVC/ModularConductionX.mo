@@ -56,7 +56,7 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
       )
     )
   );
-  Modelica.Blocks.Logical.Or vcont annotation(
+  Modelica.Blocks.Logical.Or vcont "groups inputs for refrac_v" annotation(
     Placement(
       visible = true,
       transformation(
@@ -65,7 +65,7 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
       )
     )
   );
-  Modelica.Blocks.Logical.Or rpace annotation(
+  Modelica.Blocks.Logical.Or rpace "groups reset signals of pace_av" annotation(
     Placement(
       visible = true,
       transformation(
