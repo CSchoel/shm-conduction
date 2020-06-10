@@ -1,9 +1,9 @@
 within SHMConduction.Components.PVC;
 model ModularConductionX "cardiac conduction system with trigger for PVCs"
   extends UnidirectionalConductionComponent(outp.fixed=true);
+  // outp is used in a when equation, so we need an initial value
   extends SHMConduction.Icons.Heart;
   import SHMConduction.Components.Connectors.InstantInput;
-  // outp is used in a when equation, so we need an initial value
   import SI = Modelica.SIunits;
   RefractoryGateX refrac_av(d_refrac=0.364) "refractory component for AV node" annotation(
     Placement(
