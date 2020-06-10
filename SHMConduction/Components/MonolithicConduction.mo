@@ -1,27 +1,28 @@
 within SHMConduction.Components;
 model MonolithicConduction "cardiac conduction system of the human heart adapted from the doctorate thesis of H. Seidel"
+  import SI = Modelica.SIunits;
   input InstantSignal inp(start=false, fixed=true) "the sinus signal";
   output InstantSignal outp(start=false, fixed=true) "true when a contraction is triggered";
-  parameter Modelica.SIunits.Duration d_refrac = 0.22 "refractory period that has to pass until a signal from the sinus node can take effect again";
-  parameter Modelica.SIunits.Period av_period = 1.7 "av-node cycle duration";
-  parameter Modelica.SIunits.Duration k_avc_t = 0.78 "sensitivity of the atrioventricular conduction time to the time passed since the last ventricular conduction";
-  parameter Modelica.SIunits.Duration d_avc0 = 0.09 "base value for atrioventricular conduction time";
-  parameter Modelica.SIunits.Duration tau_avc = 0.11 "reference time for atrioventricular conduction time"; //TODO find better description
-  parameter Modelica.SIunits.Period initial_d_sinus_sinus = 1 "initial value for d_sinus_sinus";
-  parameter Modelica.SIunits.Period initial_d_interbeat = 1 "initial value for d_interbeat";
-  parameter Modelica.SIunits.Time initial_cont_last = 0 "initial value for last ventricular contraction time";
-  parameter Modelica.SIunits.Duration initial_d_delay = 0.15 "initial value for atrioventricular conduction time";
+  parameter SI.Duration d_refrac = 0.22 "refractory period that has to pass until a signal from the sinus node can take effect again";
+  parameter SI.Period av_period = 1.7 "av-node cycle duration";
+  parameter SI.Duration k_avc_t = 0.78 "sensitivity of the atrioventricular conduction time to the time passed since the last ventricular conduction";
+  parameter SI.Duration d_avc0 = 0.09 "base value for atrioventricular conduction time";
+  parameter SI.Duration tau_avc = 0.11 "reference time for atrioventricular conduction time"; //TODO find better description
+  parameter SI.Period initial_d_sinus_sinus = 1 "initial value for d_sinus_sinus";
+  parameter SI.Period initial_d_interbeat = 1 "initial value for d_interbeat";
+  parameter SI.Time initial_cont_last = 0 "initial value for last ventricular contraction time";
+  parameter SI.Duration initial_d_delay = 0.15 "initial value for atrioventricular conduction time";
   output Boolean av_contraction "true when the av-node triggers a contraction";
   output Boolean sinus_contraction "true when the sinus node triggers a contraction";
   output Boolean refrac_passed(start=false, fixed=true) "true when the refractory period has passed";
-  discrete output Modelica.SIunits.Period d_sinus_sinus "time between the last two sinus signals that did trigger a contraction";
-  discrete output Modelica.SIunits.Period d_interbeat "time between the last two contractions";
+  discrete output SI.Period d_sinus_sinus "time between the last two sinus signals that did trigger a contraction";
+  discrete output SI.Period d_interbeat "time between the last two contractions";
 protected
-  discrete Modelica.SIunits.Time cont_last "time of last contraction";
-  discrete Modelica.SIunits.Duration d_delay "atrioventricular conduction time (delay for sinus signal to trigger contraction)";
-  Modelica.SIunits.Duration since_cont "helper variable; time passed since last contraction";
+  discrete SI.Time cont_last "time of last contraction";
+  discrete SI.Duration d_delay "atrioventricular conduction time (delay for sinus signal to trigger contraction)";
+  SI.Duration since_cont "helper variable; time passed since last contraction";
   Boolean signal_received(start=false, fixed=true) "true, if a sinus signal has already been received since the last contraction";
-  discrete Modelica.SIunits.Time sinus_last "time of last received sinus signal";
+  discrete SI.Time sinus_last "time of last received sinus signal";
   Boolean contraction_event(start=false, fixed=true);
 initial equation
   cont_last = initial_cont_last;
