@@ -49,6 +49,13 @@ try
 finally
     println("Closing OMC session")
     sleep(1)
-    OMJulia.sendExpression(omc, "quit()", parsed=false)
+    try
+        OMJulia.sendExpression(omc, "quit()")
+    catch e
+        # ParseError is expected
+        if !isa(e, OMJulia.Parser.ParseError)
+            rethrow()
+        end
+    end
     println("Done")
 end
