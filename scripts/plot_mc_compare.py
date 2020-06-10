@@ -120,16 +120,16 @@ if __name__ == "__main__":
   )
   plot_mc(
     orig_vs_modular["time"],
-    orig_vs_modular["monC.T_cont"],
-    orig_vs_modular["modC.T"],
-    outname=os.path.join(result_folder, "plot_mc.pdf")
+    orig_vs_modular["monC.d_interbeat"],
+    orig_vs_modular["modC.d_interbeat"],
+    outname=os.path.join(result_folder, "plot_mc.png")
   )
   plot_pvc(
     pvc_sinus["time"],
-    pvc_sinus["con.T"],
+    pvc_sinus["con.d_interbeat"],
     find_pvcs(pvc_sinus["trigger"]),
     pvc_nosinus["time"],
-    pvc_nosinus["con.T"],
+    pvc_nosinus["con.d_interbeat"],
     find_pvcs(pvc_nosinus["trigger"]),
-    outname=os.path.join(result_folder, "plot_pvc.pdf")
+    outname=os.path.join(result_folder, "plot_pvc.png")
   )
