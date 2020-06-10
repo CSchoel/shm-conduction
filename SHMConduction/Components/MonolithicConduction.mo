@@ -11,17 +11,17 @@ model MonolithicConduction "cardiac conduction system of the human heart adapted
   parameter Modelica.SIunits.Period initial_d_interbeat = 1 "initial value for d_interbeat";
   parameter Modelica.SIunits.Time initial_cont_last = 0 "initial value for last ventricular contraction time";
   parameter Modelica.SIunits.Duration initial_d_delay = 0.15 "initial value for atrioventricular conduction time";
-  discrete Modelica.SIunits.Time cont_last "time of last contraction";
-  discrete Modelica.SIunits.Duration d_delay "atrioventricular conduction time (delay for sinus signal to trigger contraction)";
   output Boolean av_contraction "true when the av-node triggers a contraction";
   output Boolean sinus_contraction "true when the sinus node triggers a contraction";
   output Boolean refrac_passed(start=false, fixed=true) "true when the refractory period has passed";
   discrete output Modelica.SIunits.Period d_sinus_sinus "time between the last two sinus signals that did trigger a contraction";
   discrete output Modelica.SIunits.Period d_interbeat "time between the last two contractions";
+protected
+  discrete Modelica.SIunits.Time cont_last "time of last contraction";
+  discrete Modelica.SIunits.Duration d_delay "atrioventricular conduction time (delay for sinus signal to trigger contraction)";
   Modelica.SIunits.Duration since_cont "helper variable; time passed since last contraction";
   Boolean signal_received(start=false, fixed=true) "true, if a sinus signal has already been received since the last contraction";
   discrete Modelica.SIunits.Time sinus_last "time of last received sinus signal";
-protected
   Boolean contraction_event(start=false, fixed=true);
 initial equation
   cont_last = initial_cont_last;
