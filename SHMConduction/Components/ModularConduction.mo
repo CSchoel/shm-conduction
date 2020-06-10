@@ -2,7 +2,8 @@ within SHMConduction.Components;
 model ModularConduction "modular version of the model of the cardiac conduction system by H. Seidel"
   extends UnidirectionalConductionComponent;
   extends SHMConduction.Icons.Heart;
-  RefractoryGate refrac_av(T_refrac=0.364) "refractory component for AV node" annotation(
+  import SI = Modelica.SIunits;
+  RefractoryGate refrac_av(d_refrac=0.364) "refractory component for AV node" annotation(
     Placement(
       visible = true,
       transformation(
@@ -11,7 +12,7 @@ model ModularConduction "modular version of the model of the cardiac conduction 
       )
     )
   );
-  Pacemaker pace_av(T=1.7) "pacemaker effect of AV node" annotation(
+  Pacemaker pace_av(period=1.7) "pacemaker effect of AV node" annotation(
     Placement(
       visible = true,
       transformation(
@@ -29,8 +30,8 @@ model ModularConduction "modular version of the model of the cardiac conduction 
       )
     )
   );
-  discrete Modelica.SIunits.Period T(start=1, fixed=true) "duration of last heart cycle";
-  discrete Modelica.SIunits.Time cont_last(start=0, fixed=true) "time of last contraction";
+  discrete SI.Duration d_interbeat(start=1, fixed=true) "duration of last heart cycle (interbeat interval)";
+  discrete SI.Time cont_last(start=0, fixed=true) "time of last contraction";
 equation
   connect(inp, pace_av.inp) annotation(
     Line(thickness = 1, points = {{-74, 0}, {-96, 0}, {-96, 0}, {-100, 0}})
@@ -48,7 +49,7 @@ equation
     Line(thickness = 1, points = {{84, 0}, {102, 0}, {102, 0}, {102, 0}})
   );
   when outp then
-    T = time - pre(cont_last);
+    d_interbeat = time - pre(cont_last);
     cont_last = time;
   end when;
   annotation(

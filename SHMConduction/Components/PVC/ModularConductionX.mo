@@ -4,7 +4,8 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
   extends SHMConduction.Icons.Heart;
   import SHMConduction.Components.Connectors.InstantInput;
   // outp is used in a when equation, so we need an initial value
-  RefractoryGateX refrac_av(T_refrac=0.364) "refractory component for AV node" annotation(
+  import SI = Modelica.SIunits;
+  RefractoryGateX refrac_av(d_refrac=0.364) "refractory component for AV node" annotation(
     Placement(
       visible = true,
       transformation(
@@ -13,7 +14,7 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
       )
     )
   );
-  Pacemaker pace_av(T=1.7) "pacemaker effect of AV node" annotation(
+  Pacemaker pace_av(period=1.7) "pacemaker effect of AV node" annotation(
     Placement(
       visible = true,
       transformation(
@@ -31,7 +32,7 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
       )
     )
   );
-  RefractoryGate refrac_v(T_refrac=0.2) "refractory component for ventricles" annotation(
+  RefractoryGate refrac_v(d_refrac=0.2) "refractory component for ventricles" annotation(
     Placement(
       visible = true,
       transformation(
@@ -40,8 +41,8 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
       )
     )
   );
-  discrete Modelica.SIunits.Period T(start=1, fixed=true) "duration of last heart cycle";
-  discrete Modelica.SIunits.Time cont_last(start=0, fixed=true) "time of last contraction";
+  discrete SI.Period d_interbeat(start=1, fixed=true) "duration of last heart cycle";
+  discrete SI.Time cont_last(start=0, fixed=true) "time of last contraction";
   InstantInput pvc(fixed=true) "trigger signal for a PVC" annotation(
     Placement(
       visible = true,
@@ -126,7 +127,7 @@ equation
     Line(points = {{76, -76}, {70, -76}, {70, -50}, {16, -50}, {16, -44}, {30, -44}})
   );
   when outp then
-    T = time - pre(cont_last);
+    d_interbeat = time - pre(cont_last);
     cont_last = time;
   end when;
   annotation(
