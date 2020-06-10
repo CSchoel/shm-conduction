@@ -7,7 +7,8 @@ model Pacemaker "pacemaker that can elicit spontaneous signals and transmit inco
   import SI = Modelica.SIunits;
   parameter SI.Period period = 1 "pacemaker period";
 protected
-  discrete SI.Time t_next(start=period, fixed=true) "scheduled time of next spontaneous beat";
+  discrete SI.Time t_next(start=period, fixed=true)
+    "scheduled time of next spontaneous beat";
   InstantSignal spontaneous_signal = time > pre(t_next)
     "signal generated spontaneously by this pacemaker";
 equation
