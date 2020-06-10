@@ -1,5 +1,7 @@
 within SHMConduction.Components;
 model MonolithicConduction "cardiac conduction system of the human heart adapted from the doctorate thesis of H. Seidel"
+  input InstantSignal inp(start=false, fixed=true) "the sinus signal";
+  output InstantSignal outp(start=false, fixed=true) "true when a contraction is triggered";
   parameter Modelica.SIunits.Duration d_refrac = 0.22 "refractory period that has to pass until a signal from the sinus node can take effect again";
   parameter Modelica.SIunits.Period av_period = 1.7 "av-node cycle duration";
   parameter Modelica.SIunits.Duration k_avc_t = 0.78 "sensitivity of the atrioventricular conduction time to the time passed since the last ventricular conduction";
@@ -11,8 +13,6 @@ model MonolithicConduction "cardiac conduction system of the human heart adapted
   parameter Modelica.SIunits.Duration initial_d_delay = 0.15 "initial value for atrioventricular conduction time";
   discrete Modelica.SIunits.Time cont_last "time of last contraction";
   discrete Modelica.SIunits.Duration d_delay "atrioventricular conduction time (delay for sinus signal to trigger contraction)";
-  input InstantSignal signal(start=false, fixed=true) "the sinus signal";
-  output InstantSignal contraction(start=false, fixed=true) "true when a contraction is triggered";
   output Boolean av_contraction "true when the av-node triggers a contraction";
   output Boolean sinus_contraction "true when the sinus node triggers a contraction";
   output Boolean refrac_passed(start=false, fixed=true) "true when the refractory period has passed";
@@ -33,17 +33,17 @@ equation
   signal_received = sinus_last > cont_last;
   refrac_passed = since_cont > d_refrac;
   contraction_event = (av_contraction or sinus_contraction) and refrac_passed "contraction can come from av-node or sinus node";
-  contraction = edge(contraction_event);
+  outp = edge(contraction_event);
   av_contraction = since_cont > av_period "av-node contracts when av_period has passed since last contraction";
   sinus_contraction = signal_received and time > sinus_last + d_delay "sinus node contracts when d_delay has passed since last sinus signal";
   since_cont = time - cont_last;
   //sinus signal is recognized if refractory period has passed and there is no other sinus signal already in effect
-  when signal and pre(refrac_passed) and not pre(signal_received) then
+  when inp and pre(refrac_passed) and not pre(signal_received) then
     d_delay = d_avc0 + k_avc_t * exp(-since_cont / tau_avc) "schedules next sinus_contraction";
     sinus_last = time "record timestamp of recognized sinus signal";
     d_sinus_sinus = time - pre(sinus_last);
   end when;
-  when pre(contraction) then
+  when pre(outp) then
     cont_last = time "record timestamp of contraction";
     d_interbeat = time - pre(cont_last);
   end when;
