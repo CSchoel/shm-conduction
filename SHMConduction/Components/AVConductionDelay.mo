@@ -1,10 +1,11 @@
 within SHMConduction.Components;
-model AVConductionDelay "conduction delay between start of AV node and ventricles"
+model AVConductionDelay "conduction delay between SA node and ventricles"
   extends ConductionDelay;
-  parameter Modelica.SIunits.Duration k_avc_t = 0.78 "maximum increase in delay duration";
-  parameter Modelica.SIunits.Duration d_avc0 = 0.09 "minimal delay duration";
-  parameter Modelica.SIunits.Duration tau_avc = 0.11 "reference time for delay duration";
-  parameter Modelica.SIunits.Duration initial_d_avc = 0.15 "initial value for delay duration";
+  import SI = Modelica.SIunits;
+  parameter SI.Duration k_avc_t = 0.78 "maximum increase in delay duration";
+  parameter SI.Duration d_avc0 = 0.09 "minimal delay duration";
+  parameter SI.Duration tau_avc = 0.11 "reference time for delay duration";
+  parameter SI.Duration initial_d_avc = 0.15 "initial value for delay duration";
 initial equation
   d_delay = initial_d_avc;
 equation
