@@ -6,7 +6,7 @@ model PVCExample "experiment to test response of ModularConductionX to PVCs"
   Integer count_sig(start=0, fixed=true) "counts SA/AV signals";
   parameter Boolean with_sinus = true "if true, a sinus signal is applied, otherwise only the AV node is active";
   parameter SI.Period normal_interval = if with_sinus then 0.8 else con.pace_av.period "normal cycle duration without PVC";
-  discrete SI.Duration t_since_sig = time - pre(sig_last) "time since last signal from SA/AV node";
+  SI.Duration t_since_sig = time - pre(sig_last) "time since last signal from SA/AV node";
   Boolean pvc_a = pre(count_sig) == 5 and t_since_sig > con.delay_sa_v.d_avc0 / 2
     "timer for PVC a): while 6th beat is delayed";
   Boolean pvc_b = pre(count_sig) == 12 and t_since_sig > con.refrac_av.d_refrac / 2
