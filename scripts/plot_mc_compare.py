@@ -8,7 +8,7 @@ def plot_mc(time, modular, orig, outname=None):
   plt.plot(time, modular, linewidth=2, alpha=0.5, label="modular")
   plt.plot(time, orig, linewidth=2, alpha=0.5, label="original")
   plt.xlabel("time [s]")
-  plt.ylabel("RR interval length [s]")
+  plt.ylabel("interbeat interval length [s]")
   #plt.xticks(np.arange(0, 5) * 10)
   plt.minorticks_on()
   #plt.grid(alpha=0.5, which="both")
@@ -36,7 +36,7 @@ def plot_pvc(time_s, modular_s, pvc_s, time_nos, modular_nos, pvc_nos, outname=N
   for x in x_pvc_s:
     ax1.axvline(x, label="PVC", color="black", linestyle="--", alpha=0.5)
   ax1.plot(time_s, modular_s)
-  ax1.set_ylabel("RR interval length [s]")
+  ax1.set_ylabel("interbeat interval length [s]")
   ax1.set_xlabel("time[s]")
   ax1.set_xlim(0, 30)
   ax1.set_ylim(0.25, 2)
@@ -49,7 +49,7 @@ def plot_pvc(time_s, modular_s, pvc_s, time_nos, modular_nos, pvc_nos, outname=N
   for x in x_pvc_nos:
     ax2.axvline(x, label="PVC", color="black", linestyle="--", alpha=0.5)
   ax2.plot(time_nos, modular_nos)
-  ax2.set_ylabel("RR interval length [s]")
+  ax2.set_ylabel("interbeat interval length [s]")
   ax2.set_xlabel("time[s]")
   ax2.set_xlim(0, 55)
   ax2.set_ylim(0.25, 2)
