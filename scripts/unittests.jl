@@ -12,7 +12,7 @@ if !ispath(outdir)
     mkdir(outdir)
 end
 
-withOMC(outdir, modeldir) begin omc
+withOMC(outdir, modeldir) do omc
     @testset "Simulate examples" begin
         @testset "UnidirectionalConductionExample" begin
             testmodel(omc, "SHMConduction.Examples.ModularExample"; refdir=refdir)
