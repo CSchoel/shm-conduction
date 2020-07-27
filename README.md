@@ -56,7 +56,7 @@ To reproduce the plots you have to use the following steps:
 2. Download and install [Julia](https://julialang.org/).
 3. Clone this repository with Git or download a [ZIP file of the current master branch](https://github.com/CSchoel/shm-contraction/archive/master.zip) and extract it with an archive manager of your choice.
 4. Run the following commands in a terminal from the repository folder:
-  * `julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/OpenModelica/OMJulia.jl.git"))'` (we require some features from the latest revision of OMJulia)
+  * `julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/THM-MoTE/ModelicaScriptingTools.jl.git"))'`
   * `julia scripts/unittests.jl`
 5. This should create the folder `out` with the following result files:
   * `SHMConduction.Examples.ModularExample_res.csv` contains the data for Figure 2 in the columns `time`, `monC.T_cont` and `modC.T`.
