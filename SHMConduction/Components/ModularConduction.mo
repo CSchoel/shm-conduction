@@ -30,8 +30,10 @@ model ModularConduction "modular version of the model of the cardiac conduction 
       )
     )
   );
-  discrete SI.Duration d_interbeat(start=1, fixed=true) "duration of last heart cycle (interbeat interval)";
-  discrete SI.Time cont_last(start=0, fixed=true) "time of last contraction";
+  parameter SI.Duration initial_T = 1 "initial value for duration of last interbeat interval";
+  parameter SI.Duration initial_cont_last = 0 "initial value for last ventricular contraction time";
+  discrete SI.Duration d_interbeat(start=initial_T, fixed=true) "duration of last heart cycle (interbeat interval)";
+  discrete SI.Time cont_last(start=initial_cont_last, fixed=true) "time of last contraction";
 equation
   connect(inp, pace_av.inp) annotation(
     Line(thickness = 1, points = {{-74, 0}, {-96, 0}, {-96, 0}, {-100, 0}})
