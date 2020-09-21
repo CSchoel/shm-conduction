@@ -41,8 +41,10 @@ model ModularConductionX "cardiac conduction system with trigger for PVCs"
       )
     )
   );
-  discrete SI.Period d_interbeat(start=1, fixed=true) "duration of last heart cycle";
-  discrete SI.Time cont_last(start=0, fixed=true) "time of last contraction";
+  parameter SI.Duration initial_T = 1 "initial value for duration of last interbeat interval";
+  parameter SI.Duration initial_cont_last = 0 "initial value for last ventricular contraction time";
+  discrete SI.Duration d_interbeat(start=initial_T, fixed=true) "duration of last heart cycle (interbeat interval)";
+  discrete SI.Time cont_last(start=initial_cont_last, fixed=true) "time of last contraction";
   InstantInput pvc(fixed=true) "trigger signal for a PVC" annotation(
     Placement(
       visible = true,
