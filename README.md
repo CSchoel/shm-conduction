@@ -56,13 +56,15 @@ To reproduce the plots you have to use the following steps:
 2. Download and install [Julia](https://julialang.org/).
 3. Clone this repository with Git or download a [ZIP file of the current master branch](https://github.com/CSchoel/shm-contraction/archive/master.zip) and extract it with an archive manager of your choice.
 4. Run the following commands in a terminal from the repository folder:
-  * `julia -e 'ENV["PYTHON"]=""; using Pkg; Pkg.add(PackageSpec(url="https://github.com/THM-MoTE/ModelicaScriptingTools.jl.git"))'`
+  * `julia --project=. -e 'ENV["PYTHON"]=""; using Pkg; Pkg.instantiate()'`
   * `julia scripts/unittests.jl`
 5. This should create the folder `out` with the following result files:
   * `SHMConduction.Examples.ModularExample_res.csv` contains the data for Figure 2 in the columns `time`, `monC.T_cont` and `modC.T`.
   * `SHMConduction.Examples.PVCExample_res.csv` contains the data for Figure 4a in the columns `time` and `con.T`.
   * `PVCNoSinus_res.csv` contains the data for Figure 4b in the columns `time` and `con.T`
-6. Produce the plots with a plotting tool or library of your choice or use the already existing Python script in `scripts/plot_mc_compare.py` which will write the plots as PDF files in to the `out` folder.
+6. Produce the plots with a plotting tool or library of your choice or use the already existing Python script in `scripts/plot_mc_compare.py` which will write the plots as PDF files in to the `out` folder. To run the Python script use the following commands:
+  * `python -m pip install -r requirements.txt`
+  * `python scripts/plot_mc_compare.py`
 
 
 ## References
