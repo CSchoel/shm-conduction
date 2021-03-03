@@ -19,7 +19,7 @@ jobs:
       with:
         version: 1.5
     - name: Install OpenModelica
-      uses: THM-MoTE/setup-openmodelica@v0.1.2
+      uses: THM-MoTE/setup-openmodelica@v0.1.3
       with:
         version: 1.16.2
     #   run: |
