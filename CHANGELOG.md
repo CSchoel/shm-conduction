@@ -18,6 +18,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [1.1.1] - 2021-03-05
+
+### Added
+
+* Zenodo badge in `README.md`
+
+### Changed
+
+[nothing]
+
+### Fixed
+
+* increased simulation time for `PVCNoSinus` to 55 seconds to be able to produce full plot for manuscript
+* removed spurious newlines in `RELEASE_HEAD.md`
+* fixed artifact name in release script
+
 ## [1.1.0] - 2021-03-05
 
 ### Added
