@@ -2,6 +2,7 @@
 
 [![Run tests](https://github.com/CSchoel/shm-conduction/actions/workflows/test.yml/badge.svg)](https://github.com/CSchoel/shm-conduction/actions/workflows/test.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4585386.svg)](https://doi.org/10.5281/zenodo.4585386)
+[![BioModels](https://img.shields.io/badge/BioModels-MODEL2103050002-377)](https://www.ebi.ac.uk/biomodels/MODEL2103050002)
 
 This repository contains a modular model of the human cardiac conduction system written in [Modelica](https://www.modelica.org/) as well as an extension of this model that introduces a trigger for [premature ventricular contractions (PVCs)](https://en.wikipedia.org/wiki/Premature_ventricular_contraction).
 It is based on the Seidel-Herzel Model (SHM) of the human baroreflex that was first published by Henrik Seidel in his PhD thesis \[[1]\].
