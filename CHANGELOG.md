@@ -12,6 +12,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+[nothing]
+
+### Fixed
+
+[nothing]
+
+## [1.1.0] - 2021-03-05
+
+### Added
+
+[nothing]
+
+### Changed
+
 * uses [MoST](https://github.com/THM-MoTE/ModelicaScriptingTools.jl) for test script
 * renamed default branch from `master` to `main`
 * switched from Travis CI to GitHub Actions
