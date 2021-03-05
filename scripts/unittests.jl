@@ -7,7 +7,8 @@ projectroot = dirname(@__DIR__)
 
 outdir = joinpath(projectroot, "out")
 modeldir = projectroot
-refdir = joinpath(projectroot, "regRefData")
+# use reference data from SHM project if available
+refdir = joinpath(projectroot, "../shm-ref")
 
 if !ispath(outdir)
     mkdir(outdir)
