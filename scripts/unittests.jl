@@ -23,6 +23,8 @@ withOMC(outdir, modeldir) do omc
             # we cannot change with_sinus using simflags and -override
             # because it is a structural parameter => create wrapper model
             OMJulia.sendExpression(omc, "model PVCNoSinus extends SHMConduction.Examples.PVCExample(with_sinus=false); end PVCNoSinus;")
+            es = OMJulia.sendExpression(omc, "getErrorString()")
+            @test isempty(es)
             testmodel(omc, "PVCNoSinus";  override=Dict(
                 "stopTime"=>50, "numberOfIntervals"=>27500
             ), refdir=refdir)
