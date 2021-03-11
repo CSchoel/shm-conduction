@@ -148,7 +148,7 @@ uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
 [[ModelicaScriptingTools]]
 deps = ["CSV", "DataFrames", "Documenter", "Markdown", "OMJulia", "PyCall", "Test", "ZMQ"]
-git-tree-sha1 = "eb569749d8da129dd31cef1b0a642ca685dc6657"
+git-tree-sha1 = "950e41b2d5a6aacd24d541cb95a172b0bc2a0230"
 repo-rev = "main"
 repo-url = "https://github.com/THM-MoTE/ModelicaScriptingTools.jl.git"
 uuid = "9bd7ba1c-b518-491f-8f72-7efe190322aa"

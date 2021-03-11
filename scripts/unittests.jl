@@ -1,4 +1,4 @@
-using ModelicaScriptingTools: withOMC, testmodel
+using ModelicaScriptingTools: withOMC, testmodel, installAndLoad
 using Base.Filesystem
 using Test
 using OMJulia
