@@ -15,6 +15,7 @@ if !ispath(outdir)
 end
 
 withOMC(outdir, modeldir) do omc
+    installAndLoad(omc, "Modelica"; version="3.2.3")
     @testset "Simulate examples" begin
         @testset "UnidirectionalConductionExample" begin
             testmodel(omc, "SHMConduction.Examples.ModularExample"; refdir=refdir)
