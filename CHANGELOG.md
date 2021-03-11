@@ -12,11 +12,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-[nothing]
+* uses latest version of MoST, which requires manual installation of Modelica Standard Library
 
 ### Fixed
 
-[nothing]
+* variable filter annotation was called `varFilter` instead of `variableFilter` in examples
 
 ## [1.1.1] - 2021-03-05
 
