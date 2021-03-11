@@ -19,7 +19,8 @@ jobs:
       with:
         ref: af136d6ebcc92910c9d7a1ea747edfb2503442f8
         repository: CSchoel/shm-ref
-        path: ../shm-ref
+        path: shm-ref
+    - run: ln -s shm-ref ../shm-ref
     - name: Install Julia
       uses: julia-actions/setup-julia@v1
       with:
