@@ -31,6 +31,6 @@ equation
   annotation(
     experiment(StartTime = 0, StopTime = 55, Tolerance = 1e-6, Interval = 0.002),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "dassl"),
-    __MoST_experiment(varFilter="con\\.d_interbeat|trigger")
+    __MoST_experiment(variableFilter="con\\.d_interbeat|trigger")
   );
 end PVCExample;
