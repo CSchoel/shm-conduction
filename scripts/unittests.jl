@@ -28,7 +28,8 @@ withOMC(outdir, modeldir) do omc
             es = OMJulia.sendExpression(omc, "getErrorString()")
             @test isempty(es)
             testmodel(omc, "PVCNoSinus";  override=Dict(
-                "stopTime"=>55, "numberOfIntervals"=>27500
+                "stopTime"=>55, "numberOfIntervals"=>27500,
+                "variableFilter"=>"con\\.d_interbeat|trigger"
             ), refdir=refdir)
         end
     end
