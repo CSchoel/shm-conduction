@@ -16,10 +16,10 @@ jobs:
     # NOTE: This is not included as a git submodule, because then the parent
     # project SHM would contain shm-ref twice.
     - uses: actions/checkout@v2
-        with:
-          ref: af136d6ebcc92910c9d7a1ea747edfb2503442f8
-          repository: CSchoel/shm-ref
-          path: ../shm-ref
+      with:
+        ref: af136d6ebcc92910c9d7a1ea747edfb2503442f8
+        repository: CSchoel/shm-ref
+        path: ../shm-ref
     - name: Install Julia
       uses: julia-actions/setup-julia@v1
       with:
