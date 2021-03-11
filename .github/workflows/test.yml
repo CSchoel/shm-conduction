@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    # also checkout reference data
+    - uses: actions/checkout@v2
+        with:
+          repository: CSchoel/shm-ref
+          path: ../shm-ref
     - name: Install Julia
       uses: julia-actions/setup-julia@v1
       with:
