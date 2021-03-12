@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-[nothing]
+* GitHub Actions now downloads reference data for tests
 
 ### Changed
 
