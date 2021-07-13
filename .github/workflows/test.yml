@@ -29,7 +29,7 @@ jobs:
     - name: Install OpenModelica
       uses: THM-MoTE/setup-openmodelica@v1
       with:
-        version: 1.16.2
+        version: 1.17.0
     - name: Install Julia requirements
       run: |
         export PYTHON=""
