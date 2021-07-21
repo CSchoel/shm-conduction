@@ -68,6 +68,11 @@ To reproduce the plots you have to use the following steps:
   * `python -m pip install -r requirements.txt`
   * `python scripts/plot_mc_compare.py`
 
+## Publication
+
+The models in this repository are described in the following article:
+
+C. Schölzel, V. Blesius, G. Ernst, and A. Dominik, “Characteristics of mathematical modeling languages that facilitate model reuse in systems biology: a software engineering perspective,” npj Syst Biol Appl, vol. 7, no. 1, p. 27, 2021, doi: [10.1038/s41540-021-00182-w](https://doi.org/10.1038/s41540-021-00182-w).
 
 ## References
 
